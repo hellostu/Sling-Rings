@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4491CB071C57B05A007B63D2 /* Canon_RingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4491CB061C57B05A007B63D2 /* Canon_RingsTests.m */; };
+		4491CB131C57B21B007B63D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4491CB121C57B21B007B63D2 /* GLKit.framework */; };
+		44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */; };
+		44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4CA1C5C28ED009C8E32 /* SRContext.m */; };
+		44DCE4D01C5C28ED009C8E32 /* SRFrameBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4CC1C5C28ED009C8E32 /* SRFrameBuffer.m */; };
+		44DCE4D11C5C28ED009C8E32 /* SRRenderBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4CE1C5C28ED009C8E32 /* SRRenderBuffer.m */; };
+		44DCE4D61C5C28FA009C8E32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4D31C5C28FA009C8E32 /* AppDelegate.m */; };
+		44DCE4D71C5C28FA009C8E32 /* SRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4D51C5C28FA009C8E32 /* SRViewController.m */; };
+		44DCE4D91C5C2903009C8E32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44DCE4D81C5C2903009C8E32 /* Assets.xcassets */; };
+		44DCE4DB1C5C290B009C8E32 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44DCE4DA1C5C290B009C8E32 /* Info.plist */; };
+		44DCE4DD1C5C2915009C8E32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4DC1C5C2915009C8E32 /* main.m */; };
+		44DCE4E31C5C2989009C8E32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44DCE4E21C5C2989009C8E32 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4491CB031C57B05A007B63D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4491CAE11C57B05A007B63D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4491CAE81C57B05A007B63D2;
+			remoteInfo = "Canon Rings";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4491CAE91C57B05A007B63D2 /* Sling Rings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sling Rings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4491CB021C57B05A007B63D2 /* Sling Rings.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sling Rings.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4491CB061C57B05A007B63D2 /* Canon_RingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Canon_RingsTests.m; sourceTree = "<group>"; };
+		4491CB081C57B05A007B63D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4491CB121C57B21B007B63D2 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		44DCE4C61C5C28D9009C8E32 /* SROpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SROpenGLView.h; path = "Sling Rings/SROpenGLView.h"; sourceTree = SOURCE_ROOT; };
+		44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SROpenGLView.m; path = "Sling Rings/SROpenGLView.m"; sourceTree = SOURCE_ROOT; };
+		44DCE4C91C5C28ED009C8E32 /* SRContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRContext.h; path = "Sling Rings/SRContext.h"; sourceTree = SOURCE_ROOT; };
+		44DCE4CA1C5C28ED009C8E32 /* SRContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRContext.m; path = "Sling Rings/SRContext.m"; sourceTree = SOURCE_ROOT; };
+		44DCE4CB1C5C28ED009C8E32 /* SRFrameBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRFrameBuffer.h; path = "Sling Rings/SRFrameBuffer.h"; sourceTree = SOURCE_ROOT; };
+		44DCE4CC1C5C28ED009C8E32 /* SRFrameBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRFrameBuffer.m; path = "Sling Rings/SRFrameBuffer.m"; sourceTree = SOURCE_ROOT; };
+		44DCE4CD1C5C28ED009C8E32 /* SRRenderBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRRenderBuffer.h; path = "Sling Rings/SRRenderBuffer.h"; sourceTree = SOURCE_ROOT; };
+		44DCE4CE1C5C28ED009C8E32 /* SRRenderBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRRenderBuffer.m; path = "Sling Rings/SRRenderBuffer.m"; sourceTree = SOURCE_ROOT; };
+		44DCE4D21C5C28FA009C8E32 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Sling Rings/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
+		44DCE4D31C5C28FA009C8E32 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "Sling Rings/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
+		44DCE4D41C5C28FA009C8E32 /* SRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRViewController.h; path = "Sling Rings/SRViewController.h"; sourceTree = SOURCE_ROOT; };
+		44DCE4D51C5C28FA009C8E32 /* SRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRViewController.m; path = "Sling Rings/SRViewController.m"; sourceTree = SOURCE_ROOT; };
+		44DCE4D81C5C2903009C8E32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Sling Rings/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		44DCE4DA1C5C290B009C8E32 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Sling Rings/Info.plist"; sourceTree = SOURCE_ROOT; };
+		44DCE4DC1C5C2915009C8E32 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Sling Rings/main.m"; sourceTree = SOURCE_ROOT; };
+		44DCE4E21C5C2989009C8E32 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Sling Rings/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4491CAE61C57B05A007B63D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4491CB131C57B21B007B63D2 /* GLKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4491CAFF1C57B05A007B63D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4491CAE01C57B05A007B63D2 = {
+			isa = PBXGroup;
+			children = (
+				4491CAEB1C57B05A007B63D2 /* Sling Rings */,
+				4491CB141C57B220007B63D2 /* Frameworks */,
+				4491CB051C57B05A007B63D2 /* Canon RingsTests */,
+				4491CAEA1C57B05A007B63D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4491CAEA1C57B05A007B63D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4491CAE91C57B05A007B63D2 /* Sling Rings.app */,
+				4491CB021C57B05A007B63D2 /* Sling Rings.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4491CAEB1C57B05A007B63D2 /* Sling Rings */ = {
+			isa = PBXGroup;
+			children = (
+				44EFDE461C5C271200C92DC0 /* View */,
+				44EFDE451C5C246300C92DC0 /* Objects */,
+				44DCE4D21C5C28FA009C8E32 /* AppDelegate.h */,
+				44DCE4D31C5C28FA009C8E32 /* AppDelegate.m */,
+				44DCE4D41C5C28FA009C8E32 /* SRViewController.h */,
+				44DCE4D51C5C28FA009C8E32 /* SRViewController.m */,
+				44DCE4D81C5C2903009C8E32 /* Assets.xcassets */,
+				44DCE4DA1C5C290B009C8E32 /* Info.plist */,
+				4491CAEC1C57B05A007B63D2 /* Supporting Files */,
+				44DCE4E21C5C2989009C8E32 /* LaunchScreen.storyboard */,
+			);
+			name = "Sling Rings";
+			path = "Canon Rings";
+			sourceTree = "<group>";
+		};
+		4491CAEC1C57B05A007B63D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				44DCE4DC1C5C2915009C8E32 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4491CB051C57B05A007B63D2 /* Canon RingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				4491CB061C57B05A007B63D2 /* Canon_RingsTests.m */,
+				4491CB081C57B05A007B63D2 /* Info.plist */,
+			);
+			path = "Canon RingsTests";
+			sourceTree = "<group>";
+		};
+		4491CB141C57B220007B63D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4491CB121C57B21B007B63D2 /* GLKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44EFDE451C5C246300C92DC0 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				44DCE4C91C5C28ED009C8E32 /* SRContext.h */,
+				44DCE4CA1C5C28ED009C8E32 /* SRContext.m */,
+				44DCE4CB1C5C28ED009C8E32 /* SRFrameBuffer.h */,
+				44DCE4CC1C5C28ED009C8E32 /* SRFrameBuffer.m */,
+				44DCE4CD1C5C28ED009C8E32 /* SRRenderBuffer.h */,
+				44DCE4CE1C5C28ED009C8E32 /* SRRenderBuffer.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		44EFDE461C5C271200C92DC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44DCE4C61C5C28D9009C8E32 /* SROpenGLView.h */,
+				44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4491CAE81C57B05A007B63D2 /* Sling Rings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4491CB0B1C57B05A007B63D2 /* Build configuration list for PBXNativeTarget "Sling Rings" */;
+			buildPhases = (
+				4491CAE51C57B05A007B63D2 /* Sources */,
+				4491CAE61C57B05A007B63D2 /* Frameworks */,
+				4491CAE71C57B05A007B63D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sling Rings";
+			productName = "Canon Rings";
+			productReference = 4491CAE91C57B05A007B63D2 /* Sling Rings.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4491CB011C57B05A007B63D2 /* Sling RingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4491CB0E1C57B05A007B63D2 /* Build configuration list for PBXNativeTarget "Sling RingsTests" */;
+			buildPhases = (
+				4491CAFE1C57B05A007B63D2 /* Sources */,
+				4491CAFF1C57B05A007B63D2 /* Frameworks */,
+				4491CB001C57B05A007B63D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4491CB041C57B05A007B63D2 /* PBXTargetDependency */,
+			);
+			name = "Sling RingsTests";
+			productName = "Canon RingsTests";
+			productReference = 4491CB021C57B05A007B63D2 /* Sling Rings.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4491CAE11C57B05A007B63D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = uea.ac.uk;
+				TargetAttributes = {
+					4491CAE81C57B05A007B63D2 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					4491CB011C57B05A007B63D2 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 4491CAE81C57B05A007B63D2;
+					};
+				};
+			};
+			buildConfigurationList = 4491CAE41C57B05A007B63D2 /* Build configuration list for PBXProject "Sling Rings" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4491CAE01C57B05A007B63D2;
+			productRefGroup = 4491CAEA1C57B05A007B63D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4491CAE81C57B05A007B63D2 /* Sling Rings */,
+				4491CB011C57B05A007B63D2 /* Sling RingsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4491CAE71C57B05A007B63D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44DCE4E31C5C2989009C8E32 /* LaunchScreen.storyboard in Resources */,
+				44DCE4D91C5C2903009C8E32 /* Assets.xcassets in Resources */,
+				44DCE4DB1C5C290B009C8E32 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4491CB001C57B05A007B63D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4491CAE51C57B05A007B63D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44DCE4D01C5C28ED009C8E32 /* SRFrameBuffer.m in Sources */,
+				44DCE4D11C5C28ED009C8E32 /* SRRenderBuffer.m in Sources */,
+				44DCE4D71C5C28FA009C8E32 /* SRViewController.m in Sources */,
+				44DCE4D61C5C28FA009C8E32 /* AppDelegate.m in Sources */,
+				44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */,
+				44DCE4DD1C5C2915009C8E32 /* main.m in Sources */,
+				44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4491CAFE1C57B05A007B63D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4491CB071C57B05A007B63D2 /* Canon_RingsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4491CB041C57B05A007B63D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4491CAE81C57B05A007B63D2 /* Sling Rings */;
+			targetProxy = 4491CB031C57B05A007B63D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4491CB091C57B05A007B63D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4491CB0A1C57B05A007B63D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4491CB0C1C57B05A007B63D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sling Rings/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.uea.Sling-Rings";
+				PRODUCT_NAME = "Sling Rings";
+			};
+			name = Debug;
+		};
+		4491CB0D1C57B05A007B63D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sling Rings/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.uea.Sling-Rings";
+				PRODUCT_NAME = "Sling Rings";
+			};
+			name = Release;
+		};
+		4491CB0F1C57B05A007B63D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Sling RingsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.uea.Canon-RingsTests";
+				PRODUCT_NAME = "Sling Rings";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sling Rings.app/Sling Rings";
+			};
+			name = Debug;
+		};
+		4491CB101C57B05A007B63D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Sling RingsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.uea.Canon-RingsTests";
+				PRODUCT_NAME = "Sling Rings";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sling Rings.app/Sling Rings";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4491CAE41C57B05A007B63D2 /* Build configuration list for PBXProject "Sling Rings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4491CB091C57B05A007B63D2 /* Debug */,
+				4491CB0A1C57B05A007B63D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4491CB0B1C57B05A007B63D2 /* Build configuration list for PBXNativeTarget "Sling Rings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4491CB0C1C57B05A007B63D2 /* Debug */,
+				4491CB0D1C57B05A007B63D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4491CB0E1C57B05A007B63D2 /* Build configuration list for PBXNativeTarget "Sling RingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4491CB0F1C57B05A007B63D2 /* Debug */,
+				4491CB101C57B05A007B63D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4491CAE11C57B05A007B63D2 /* Project object */;
+}
