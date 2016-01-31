@@ -7,8 +7,6 @@
 //
 
 #import "SRRenderBuffer.h"
-#include <OpenGLES/ES2/gl.h>
-#include <OpenGLES/ES2/glext.h>
 
 @interface SRRenderBuffer () {
 }
@@ -21,17 +19,17 @@
 #pragma mark Lifecycle
 //////////////////////////////////////////////////////////////////////////
 
-- (id)initWithFrameBuffer:(SRFrameBuffer *)frameBuffer {
+- (id)init {
     self = [super init];
     if (self) {
         glGenRenderbuffers(1, &_value);
-        _frameBuffer = frameBuffer;
-        [_frameBuffer bind];
         [self bind];
-        glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
-                                  GL_RENDERBUFFER, _value);
     }
     return self;
+}
+
+- (void)dealloc {
+    glDeleteRenderbuffers(1, &_value);
 }
 
 //////////////////////////////////////////////////////////////////////////

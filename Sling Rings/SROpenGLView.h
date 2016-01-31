@@ -6,12 +6,16 @@
 //  Copyright © 2016 uea.ac.uk. All rights reserved.
 //
 
+#ifndef SROpenGLView_h
+#define SROpenGLView_h
+
 @import UIKit;
 #import "SRRenderBuffer.h"
 
 @interface SROpenGLView : UIView
 
-- (void)initRenderBufferStorage;
 - (void)render;
 
 @end
+
+#endif

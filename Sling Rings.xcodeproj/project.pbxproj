@@ -16,9 +16,16 @@
 		44DCE4D61C5C28FA009C8E32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4D31C5C28FA009C8E32 /* AppDelegate.m */; };
 		44DCE4D71C5C28FA009C8E32 /* SRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4D51C5C28FA009C8E32 /* SRViewController.m */; };
 		44DCE4D91C5C2903009C8E32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44DCE4D81C5C2903009C8E32 /* Assets.xcassets */; };
-		44DCE4DB1C5C290B009C8E32 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44DCE4DA1C5C290B009C8E32 /* Info.plist */; };
 		44DCE4DD1C5C2915009C8E32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4DC1C5C2915009C8E32 /* main.m */; };
 		44DCE4E31C5C2989009C8E32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44DCE4E21C5C2989009C8E32 /* LaunchScreen.storyboard */; };
+		44DCE4E71C5C2A71009C8E32 /* VertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 44DCE4E61C5C2A71009C8E32 /* VertexShader.glsl */; };
+		44DCE4E91C5C2AA8009C8E32 /* FragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 44DCE4E81C5C2AA8009C8E32 /* FragmentShader.glsl */; };
+		44DCE4EC1C5C2B19009C8E32 /* SRShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4EB1C5C2B19009C8E32 /* SRShader.m */; };
+		44DCE4EF1C5C2C68009C8E32 /* SRProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4EE1C5C2C68009C8E32 /* SRProgram.m */; };
+		44DCE4F51C5C3028009C8E32 /* SRAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4F41C5C3028009C8E32 /* SRAttribute.m */; };
+		44DCE4F91C5D08D3009C8E32 /* SRVertices.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4F81C5D08D3009C8E32 /* SRVertices.m */; };
+		44DCE4FC1C5D0F7E009C8E32 /* SRTriangles.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4FB1C5D0F7E009C8E32 /* SRTriangles.m */; };
+		44DCE4FF1C5D11BC009C8E32 /* SRVertexBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4FE1C5D11BC009C8E32 /* SRVertexBuffer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,20 @@
 		44DCE4DA1C5C290B009C8E32 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Sling Rings/Info.plist"; sourceTree = SOURCE_ROOT; };
 		44DCE4DC1C5C2915009C8E32 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Sling Rings/main.m"; sourceTree = SOURCE_ROOT; };
 		44DCE4E21C5C2989009C8E32 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Sling Rings/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
+		44DCE4E61C5C2A71009C8E32 /* VertexShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VertexShader.glsl; sourceTree = SOURCE_ROOT; };
+		44DCE4E81C5C2AA8009C8E32 /* FragmentShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragmentShader.glsl; sourceTree = SOURCE_ROOT; };
+		44DCE4EA1C5C2B19009C8E32 /* SRShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRShader.h; sourceTree = SOURCE_ROOT; };
+		44DCE4EB1C5C2B19009C8E32 /* SRShader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRShader.m; sourceTree = SOURCE_ROOT; };
+		44DCE4ED1C5C2C68009C8E32 /* SRProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRProgram.h; sourceTree = SOURCE_ROOT; };
+		44DCE4EE1C5C2C68009C8E32 /* SRProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRProgram.m; sourceTree = SOURCE_ROOT; };
+		44DCE4F31C5C3028009C8E32 /* SRAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRAttribute.h; sourceTree = SOURCE_ROOT; };
+		44DCE4F41C5C3028009C8E32 /* SRAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRAttribute.m; sourceTree = SOURCE_ROOT; };
+		44DCE4F71C5D08D3009C8E32 /* SRVertices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRVertices.h; sourceTree = SOURCE_ROOT; };
+		44DCE4F81C5D08D3009C8E32 /* SRVertices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRVertices.m; sourceTree = SOURCE_ROOT; };
+		44DCE4FA1C5D0F7E009C8E32 /* SRTriangles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTriangles.h; sourceTree = SOURCE_ROOT; };
+		44DCE4FB1C5D0F7E009C8E32 /* SRTriangles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTriangles.m; sourceTree = SOURCE_ROOT; };
+		44DCE4FD1C5D11BC009C8E32 /* SRVertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRVertexBuffer.h; sourceTree = SOURCE_ROOT; };
+		44DCE4FE1C5D11BC009C8E32 /* SRVertexBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRVertexBuffer.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +117,10 @@
 		4491CAEB1C57B05A007B63D2 /* Sling Rings */ = {
 			isa = PBXGroup;
 			children = (
+				44DCE4E51C5C2A4B009C8E32 /* Application */,
 				44EFDE461C5C271200C92DC0 /* View */,
-				44EFDE451C5C246300C92DC0 /* Objects */,
-				44DCE4D21C5C28FA009C8E32 /* AppDelegate.h */,
-				44DCE4D31C5C28FA009C8E32 /* AppDelegate.m */,
-				44DCE4D41C5C28FA009C8E32 /* SRViewController.h */,
-				44DCE4D51C5C28FA009C8E32 /* SRViewController.m */,
+				44EFDE451C5C246300C92DC0 /* OpenGL Objects */,
+				44DCE4E41C5C2A43009C8E32 /* Resources */,
 				44DCE4D81C5C2903009C8E32 /* Assets.xcassets */,
 				44DCE4DA1C5C290B009C8E32 /* Info.plist */,
 				4491CAEC1C57B05A007B63D2 /* Supporting Files */,
@@ -136,7 +155,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		44EFDE451C5C246300C92DC0 /* Objects */ = {
+		44DCE4E41C5C2A43009C8E32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44DCE4E61C5C2A71009C8E32 /* VertexShader.glsl */,
+				44DCE4E81C5C2AA8009C8E32 /* FragmentShader.glsl */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		44DCE4E51C5C2A4B009C8E32 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				44DCE4D21C5C28FA009C8E32 /* AppDelegate.h */,
+				44DCE4D31C5C28FA009C8E32 /* AppDelegate.m */,
+				44DCE4D41C5C28FA009C8E32 /* SRViewController.h */,
+				44DCE4D51C5C28FA009C8E32 /* SRViewController.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		44EFDE451C5C246300C92DC0 /* OpenGL Objects */ = {
 			isa = PBXGroup;
 			children = (
 				44DCE4C91C5C28ED009C8E32 /* SRContext.h */,
@@ -145,8 +184,20 @@
 				44DCE4CC1C5C28ED009C8E32 /* SRFrameBuffer.m */,
 				44DCE4CD1C5C28ED009C8E32 /* SRRenderBuffer.h */,
 				44DCE4CE1C5C28ED009C8E32 /* SRRenderBuffer.m */,
+				44DCE4EA1C5C2B19009C8E32 /* SRShader.h */,
+				44DCE4EB1C5C2B19009C8E32 /* SRShader.m */,
+				44DCE4ED1C5C2C68009C8E32 /* SRProgram.h */,
+				44DCE4EE1C5C2C68009C8E32 /* SRProgram.m */,
+				44DCE4F31C5C3028009C8E32 /* SRAttribute.h */,
+				44DCE4F41C5C3028009C8E32 /* SRAttribute.m */,
+				44DCE4F71C5D08D3009C8E32 /* SRVertices.h */,
+				44DCE4F81C5D08D3009C8E32 /* SRVertices.m */,
+				44DCE4FA1C5D0F7E009C8E32 /* SRTriangles.h */,
+				44DCE4FB1C5D0F7E009C8E32 /* SRTriangles.m */,
+				44DCE4FD1C5D11BC009C8E32 /* SRVertexBuffer.h */,
+				44DCE4FE1C5D11BC009C8E32 /* SRVertexBuffer.m */,
 			);
-			name = Objects;
+			name = "OpenGL Objects";
 			sourceTree = "<group>";
 		};
 		44EFDE461C5C271200C92DC0 /* View */ = {
@@ -240,7 +291,8 @@
 			files = (
 				44DCE4E31C5C2989009C8E32 /* LaunchScreen.storyboard in Resources */,
 				44DCE4D91C5C2903009C8E32 /* Assets.xcassets in Resources */,
-				44DCE4DB1C5C290B009C8E32 /* Info.plist in Resources */,
+				44DCE4E71C5C2A71009C8E32 /* VertexShader.glsl in Resources */,
+				44DCE4E91C5C2AA8009C8E32 /* FragmentShader.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,12 +311,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				44DCE4D01C5C28ED009C8E32 /* SRFrameBuffer.m in Sources */,
+				44DCE4F51C5C3028009C8E32 /* SRAttribute.m in Sources */,
+				44DCE4EC1C5C2B19009C8E32 /* SRShader.m in Sources */,
 				44DCE4D11C5C28ED009C8E32 /* SRRenderBuffer.m in Sources */,
 				44DCE4D71C5C28FA009C8E32 /* SRViewController.m in Sources */,
 				44DCE4D61C5C28FA009C8E32 /* AppDelegate.m in Sources */,
 				44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */,
 				44DCE4DD1C5C2915009C8E32 /* main.m in Sources */,
 				44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */,
+				44DCE4FF1C5D11BC009C8E32 /* SRVertexBuffer.m in Sources */,
+				44DCE4F91C5D08D3009C8E32 /* SRVertices.m in Sources */,
+				44DCE4FC1C5D0F7E009C8E32 /* SRTriangles.m in Sources */,
+				44DCE4EF1C5C2C68009C8E32 /* SRProgram.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,9 @@
 #import "SRContext.h"
 #import "SRFrameBuffer.h"
 #import "SRRenderBuffer.h"
+#import "SRShader.h"
+#import "SRProgram.h"
+#import "SRVertexBuffer.h"
 
 @interface SROpenGLView () {
     CAEAGLLayer* _eaglLayer;
@@ -21,6 +24,8 @@
     SRContext *_context;
     SRFrameBuffer *_frameBuffer;
     SRRenderBuffer *_renderBuffer;
+    SRProgram *_program;
+    SRVertexBuffer *_vertexBuffer;
 }
 @end
 
@@ -36,8 +41,22 @@
     if (self) {
         [self __setupLayer];
         _context = [[SRContext alloc] init];
+        _renderBuffer = [[SRRenderBuffer alloc] init];
         _frameBuffer = [[SRFrameBuffer alloc] init];
-        _renderBuffer = [[SRRenderBuffer alloc] initWithFrameBuffer:_frameBuffer];
+        [_frameBuffer attachRenderBuffer:_renderBuffer];
+        
+        SRShader *vertexShader = [[SRShader alloc] initWithName:@"VertexShader" shaderType:SRShaderTypeVertex];
+        SRShader *fragmentShader = [[SRShader alloc] initWithName:@"FragmentShader" shaderType:SRShaderTypeFragment];
+        _program = [[SRProgram alloc] initWithShaders:@[vertexShader, fragmentShader]];
+        
+        _vertexBuffer = [[SRVertexBuffer alloc] initWithNumberOfVertices:4 numberOfTriangles:2 program:_program];
+        [_vertexBuffer.vertices setVertex:SRVertexMake(SRPointMake( 1, -1, 0), SRColorMake(1, 0, 0, 1)) atIndex:0];
+        [_vertexBuffer.vertices setVertex:SRVertexMake(SRPointMake( 1,  1, 0), SRColorMake(0, 1, 0, 1)) atIndex:1];
+        [_vertexBuffer.vertices setVertex:SRVertexMake(SRPointMake(-1,  1, 0), SRColorMake(0, 0, 1, 1)) atIndex:2];
+        [_vertexBuffer.vertices setVertex:SRVertexMake(SRPointMake(-1, -1, 0), SRColorMake(0, 0, 0, 1)) atIndex:3];
+        [_vertexBuffer.triangles setTriangle:SRTriangleMake(0, 1, 2) atIndex:0];
+        [_vertexBuffer.triangles setTriangle:SRTriangleMake(2, 3, 0) atIndex:1];
+        [_vertexBuffer submit];
     }
     return self;
 }
@@ -48,7 +67,10 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self initRenderBufferStorage];
+    [_context setRenderBufferStorage:_renderBuffer withLayer:_eaglLayer];
+    [_renderBuffer bind];
+    [_frameBuffer bind];
+    
     [self render];
 }
 
@@ -57,14 +79,15 @@
 #pragma mark Public Methods
 //////////////////////////////////////////////////////////////////////////
 
-- (void)initRenderBufferStorage {
-    [_context setRenderBufferStorage:_renderBuffer withLayer:_eaglLayer];
-}
-
 - (void)render {
     glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
+    
+    glViewport(0, 0, self.frame.size.width, self.frame.size.height);
+    [_vertexBuffer draw];
+    
     [_context display];
+    
 }
 
 //////////////////////////////////////////////////////////////////////////
