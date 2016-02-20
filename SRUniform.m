@@ -29,8 +29,13 @@
 #pragma mark Public Methods
 //////////////////////////////////////////////////////////////////////////
 
-- (void)setValue:(SRMatrix *)matrix {
+- (void)setMatrix:(SRMatrix *)matrix {
     glUniformMatrix4fv(_location, 1, GL_FALSE, matrix.raw);
+}
+
+- (void)setTexture:(SRTexture *)texture {
+    [texture bind];
+    glUniform1i(_location, 0);
 }
 
 @end

@@ -41,15 +41,20 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self __setupLayer];
+        //Setup OpenGL context
         _context = [[SRContext alloc] init];
+        //Create RenderBuffer for displaying to the screen
         _renderBuffer = [[SRRenderBuffer alloc] init];
         _frameBuffer = [[SRFrameBuffer alloc] init];
         [_frameBuffer attachRenderBuffer:_renderBuffer];
         
         _scene = [[SRScene alloc] init];
-        [_scene generateNewSprite];
+        SRTexture *texture = [SRTexture named:@"Texture.jpg"];;
+        SRSprite *sprite1 = [_scene generateNewSprite];
+        sprite1.texture = texture;
         
         SRSprite *sprite2 = [_scene generateNewSprite];
+        sprite2.texture = texture;
         [sprite2 scaleBy:SRPointMake(0.5, 0.5, 1.0)];
         
         self.contentScaleFactor = [UIScreen mainScreen].scale;
@@ -66,7 +71,6 @@
     [_context setRenderBufferStorage:_renderBuffer withLayer:_eaglLayer];
     [_renderBuffer bind];
     [_frameBuffer bind];
-    
     [self render];
 }
 

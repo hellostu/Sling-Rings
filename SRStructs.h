@@ -21,11 +21,19 @@ struct SRColor {
 };
 typedef struct SRColor SRColor;
 
+struct SRTexCoord {
+    float x;
+    float y;
+};
+typedef struct SRTexCoord SRTexCoord;
+
 typedef struct {
     SRPoint point;
     SRColor color;
+    SRTexCoord texCoord;
 } SRVertex;
 
-SRPoint SRPointMake(float x, float y, float z);
-SRColor SRColorMake(float r, float g, float b, float a);
-SRVertex SRVertexMake(SRPoint point, SRColor color);
+SRPoint     SRPointMake(float x, float y, float z);
+SRColor     SRColorMake(float r, float g, float b, float a);
+SRTexCoord  SRTexCoordMake(float x, float y);
+SRVertex SRVertexMake(SRPoint point, SRColor color, SRTexCoord texCoord);

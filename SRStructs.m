@@ -25,9 +25,17 @@ SRColor SRColorMake(float r, float g, float b, float a) {
     return color;
 }
 
-SRVertex SRVertexMake(SRPoint point, SRColor color) {
+SRTexCoord SRTexCoordMake(float x, float y) {
+    SRTexCoord texCoord;
+    texCoord.x = x;
+    texCoord.y = y;
+    return texCoord;
+}
+
+SRVertex SRVertexMake(SRPoint point, SRColor color, SRTexCoord texCoord) {
     SRVertex vertex;
     vertex.point = point;
     vertex.color = color;
+    vertex.texCoord = texCoord;
     return vertex;
 }

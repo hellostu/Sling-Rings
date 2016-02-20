@@ -19,7 +19,7 @@
 @property(readonly) void *raw;
 @property(readonly) size_t totalBytes;
 
-- (id)initWithSize:(int)size positionAttribute:(SRAttribute *)positionAttribute colorAttribute:(SRAttribute *)colorAttribute;
+- (id)initWithSize:(int)size positionAttribute:(SRAttribute *)positionAttribute colorAttribute:(SRAttribute *)colorAttribute textureAttribute:(SRAttribute *)textureAttribute;
 - (void)setVertex:(SRVertex)vertex atIndex:(uint)index;
 - (SRVertex *)vertexAtIndex:(uint)index;
 - (void)load;

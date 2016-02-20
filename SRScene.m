@@ -12,6 +12,7 @@
     //Slots
     SRAttribute *_positionSlot;
     SRAttribute *_sourceColorSlot;
+    SRAttribute *_textureSlot;
     SRUniform *_viewMatrixSlot;
     SRUniform *_modelMatrixSlot;
     
@@ -39,6 +40,7 @@
         //Reference all of the "Slots". This is so we can bridge data over to GLSL world. 
         _positionSlot = [[SRAttribute alloc] initWithName:@"Position" program:_program];
         _sourceColorSlot = [[SRAttribute alloc] initWithName:@"SourceColor" program:_program];
+        _textureSlot = [[SRAttribute alloc] initWithName:@"TexCoordIn" program:_program];
         _viewMatrixSlot = [[SRUniform alloc] initWithName:@"View" program:_program];
         _modelMatrixSlot = [[SRUniform alloc] initWithName:@"Model" program:_program];
         
@@ -53,7 +55,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 - (SRSprite *)generateNewSprite {
-    SRSprite *sprite = [[SRSprite alloc] initWithPositionAttribute:_positionSlot colorAttribute:_sourceColorSlot modelMatrix:_modelMatrixSlot];
+    SRSprite *sprite = [[SRSprite alloc] initWithPositionAttribute:_positionSlot colorAttribute:_sourceColorSlot textureAttribute:_textureSlot modelMatrix:_modelMatrixSlot];
     [_sprites addObject:sprite];
     return sprite;
 }
@@ -63,7 +65,7 @@
 }
 
 - (void)draw {
-    [_viewMatrixSlot setValue:self.transform];
+    [_viewMatrixSlot setMatrix:self.transform];
     for (SRSprite *sprite in _sprites) {
         [sprite draw];
     }

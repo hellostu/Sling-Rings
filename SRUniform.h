@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import "SRProgram.h"
 #import "SRMatrix.h"
+#import "SRTexture.h"
 @class SRProgram;
 
 @interface SRUniform : NSObject
@@ -20,7 +21,7 @@
 
 - (id)initWithName:(NSString *)name program:(SRProgram *)program;
 
-- (void)setValue:(SRMatrix *)matrix;
+- (void)setMatrix:(SRMatrix *)matrix;
 
 @end
 

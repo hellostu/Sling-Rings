@@ -10,10 +10,13 @@
 #import "SRTransformable.h"
 #import "SRAttribute.h"
 #import "SRUniform.h"
+#import "SRTexture.h"
 
 @interface SRSprite : SRTransformable
 
-- (id)initWithPositionAttribute:(SRAttribute *)positionAttribute colorAttribute:(SRAttribute *)colorAttribute modelMatrix:(SRUniform *)modelMatrix;
+@property(nonatomic, strong) SRTexture *texture;
+
+- (id)initWithPositionAttribute:(SRAttribute *)positionAttribute colorAttribute:(SRAttribute *)colorAttribute textureAttribute:(SRAttribute *)textureAttribute modelMatrix:(SRUniform *)modelMatrix;
 - (void)draw;
 
 @end

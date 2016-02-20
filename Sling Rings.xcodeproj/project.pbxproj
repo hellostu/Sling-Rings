@@ -33,6 +33,8 @@
 		44FC70681C78D334007867CD /* SRStructs.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70661C78D2C1007867CD /* SRStructs.m */; };
 		44FC70711C78E824007867CD /* SRScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC706A1C78E486007867CD /* SRScene.m */; };
 		44FC70751C78EF7C007867CD /* SRTransformable.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70731C78EDF6007867CD /* SRTransformable.m */; };
+		44FC707B1C7908E5007867CD /* SRTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70771C78FB0B007867CD /* SRTexture.m */; };
+		44FC707C1C7908F5007867CD /* Texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44FC70791C790213007867CD /* Texture.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,9 @@
 		44FC706A1C78E486007867CD /* SRScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRScene.m; sourceTree = SOURCE_ROOT; };
 		44FC70721C78EDF6007867CD /* SRTransformable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTransformable.h; sourceTree = SOURCE_ROOT; };
 		44FC70731C78EDF6007867CD /* SRTransformable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTransformable.m; sourceTree = SOURCE_ROOT; };
+		44FC70761C78FB0B007867CD /* SRTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTexture.h; sourceTree = SOURCE_ROOT; };
+		44FC70771C78FB0B007867CD /* SRTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTexture.m; sourceTree = SOURCE_ROOT; };
+		44FC70791C790213007867CD /* Texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Texture.jpg; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +173,7 @@
 		44DCE4E41C5C2A43009C8E32 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44FC70791C790213007867CD /* Texture.jpg */,
 				44DCE4E61C5C2A71009C8E32 /* VertexShader.glsl */,
 				44DCE4E81C5C2AA8009C8E32 /* FragmentShader.glsl */,
 			);
@@ -264,6 +270,8 @@
 				44DCE4F81C5D08D3009C8E32 /* SRVertices.m */,
 				44FC70721C78EDF6007867CD /* SRTransformable.h */,
 				44FC70731C78EDF6007867CD /* SRTransformable.m */,
+				44FC70761C78FB0B007867CD /* SRTexture.h */,
+				44FC70771C78FB0B007867CD /* SRTexture.m */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -369,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44DCE4E31C5C2989009C8E32 /* LaunchScreen.storyboard in Resources */,
+				44FC707C1C7908F5007867CD /* Texture.jpg in Resources */,
 				44DCE4D91C5C2903009C8E32 /* Assets.xcassets in Resources */,
 				44DCE4E71C5C2A71009C8E32 /* VertexShader.glsl in Resources */,
 				44DCE4E91C5C2AA8009C8E32 /* FragmentShader.glsl in Resources */,
@@ -389,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FC707B1C7908E5007867CD /* SRTexture.m in Sources */,
 				44FC70681C78D334007867CD /* SRStructs.m in Sources */,
 				44DCE4EF1C5C2C68009C8E32 /* SRProgram.m in Sources */,
 				44FC70581C78B5D0007867CD /* SRMatrix.m in Sources */,
