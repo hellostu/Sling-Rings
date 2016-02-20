@@ -60,6 +60,8 @@
             NSLog(@"%f", raw[i]);
         }
         [_program.viewUniform setValue:[scale multiply:translation]];
+        
+        self.contentScaleFactor = [UIScreen mainScreen].scale;
     }
     return self;
 }
@@ -86,8 +88,8 @@
     glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    float width = self.frame.size.width;
-    float height = self.frame.size.height;
+    float width = self.frame.size.width * self.contentScaleFactor;
+    float height = self.frame.size.height * self.contentScaleFactor;
     glViewport(0.0, 0.0, width, height);
     [_sprite draw];
     
