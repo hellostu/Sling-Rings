@@ -11,6 +11,7 @@
 
 @interface SRProgram () {
     NSMutableArray *_attributes;
+    SRUniform *_viewUniform;
 }
 @end
 
@@ -48,6 +49,9 @@
         
         [self declareAttributeWithName:@"Position" isVertexAttribute:YES];
         [self declareAttributeWithName:@"SourceColor" isVertexAttribute:YES];
+        
+        _viewUniform = [[SRUniform alloc] initWithName:@"View" program:self];
+        
     }
     return self;
 }
@@ -69,6 +73,10 @@
 
 - (SRAttribute *)colorAttribute {
     return _attributes[1];
+}
+
+- (SRUniform *)viewUniform {
+    return _viewUniform;
 }
 
 - (void)declareAttributeWithName:(NSString *)name isVertexAttribute:(BOOL)vertexAttribute {

@@ -17,6 +17,7 @@
 #import "SRShader.h"
 #import "SRProgram.h"
 #import "SRVertexBuffer.h"
+#import "SRSprite.h"
 
 @interface SROpenGLView () {
     CAEAGLLayer* _eaglLayer;
@@ -25,7 +26,7 @@
     SRFrameBuffer *_frameBuffer;
     SRRenderBuffer *_renderBuffer;
     SRProgram *_program;
-    SRVertexBuffer *_vertexBuffer;
+    SRSprite *_sprite;
 }
 @end
 
@@ -47,16 +48,18 @@
         
         SRShader *vertexShader = [[SRShader alloc] initWithName:@"VertexShader" shaderType:SRShaderTypeVertex];
         SRShader *fragmentShader = [[SRShader alloc] initWithName:@"FragmentShader" shaderType:SRShaderTypeFragment];
+        
         _program = [[SRProgram alloc] initWithShaders:@[vertexShader, fragmentShader]];
         
-        _vertexBuffer = [[SRVertexBuffer alloc] initWithNumberOfVertices:4 numberOfTriangles:2 program:_program];
-        [_vertexBuffer.vertices setVertex:SRVertexMake(SRPointMake( 1, -1, 0), SRColorMake(1, 0, 0, 1)) atIndex:0];
-        [_vertexBuffer.vertices setVertex:SRVertexMake(SRPointMake( 1,  1, 0), SRColorMake(0, 1, 0, 1)) atIndex:1];
-        [_vertexBuffer.vertices setVertex:SRVertexMake(SRPointMake(-1,  1, 0), SRColorMake(0, 0, 1, 1)) atIndex:2];
-        [_vertexBuffer.vertices setVertex:SRVertexMake(SRPointMake(-1, -1, 0), SRColorMake(0, 0, 0, 1)) atIndex:3];
-        [_vertexBuffer.triangles setTriangle:SRTriangleMake(0, 1, 2) atIndex:0];
-        [_vertexBuffer.triangles setTriangle:SRTriangleMake(2, 3, 0) atIndex:1];
-        [_vertexBuffer submit];
+        _sprite = [[SRSprite alloc] initWithProgram:_program];
+        
+        SRMatrix *translation = [SRMatrix translationOf:SRPointMake(-1.0, -1.0, 0.0)];
+        SRMatrix *scale = [SRMatrix scaleOf:SRPointMake(2.0, 2.0, 1.0)];
+        GLfloat *raw = translation.raw;
+        for (int i=0; i<16; i++) {
+            NSLog(@"%f", raw[i]);
+        }
+        [_program.viewUniform setValue:[scale multiply:translation]];
     }
     return self;
 }
@@ -83,8 +86,10 @@
     glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    glViewport(0, 0, self.frame.size.width, self.frame.size.height);
-    [_vertexBuffer draw];
+    float width = self.frame.size.width;
+    float height = self.frame.size.height;
+    glViewport(0.0, 0.0, width, height);
+    [_sprite draw];
     
     [_context display];
     

@@ -7,33 +7,55 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "SRMatrix.h"
 
-@interface Canon_RingsTests : XCTestCase
+@interface Sling_RingsTests : XCTestCase
 
 @end
 
-@implementation Canon_RingsTests
+@implementation Sling_RingsTests
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testMatrixMultiplication {
+    SRMatrix *matrix1 = [[SRMatrix alloc] init];
+    [matrix1 setValue:2  atI:0 J:0];
+    [matrix1 setValue:3  atI:0 J:1];
+    [matrix1 setValue:4  atI:0 J:2];
+    [matrix1 setValue:5  atI:1 J:0];
+    [matrix1 setValue:6  atI:1 J:1];
+    [matrix1 setValue:7  atI:1 J:2];
+    [matrix1 setValue:8  atI:2 J:0];
+    [matrix1 setValue:9  atI:2 J:1];
+    [matrix1 setValue:10 atI:2 J:2];
+    
+    SRMatrix *matrix2 = [[SRMatrix alloc] init];
+    [matrix2 setValue:-5  atI:0 J:0];
+    [matrix2 setValue:-4  atI:0 J:1];
+    [matrix2 setValue:-3  atI:0 J:2];
+    [matrix2 setValue:-2  atI:1 J:0];
+    [matrix2 setValue:-1  atI:1 J:1];
+    [matrix2 setValue: 0  atI:1 J:2];
+    [matrix2 setValue: 1  atI:2 J:0];
+    [matrix2 setValue: 2  atI:2 J:1];
+    [matrix2 setValue: 3  atI:2 J:2];
+    
+    SRMatrix *actualAnswer = [[SRMatrix alloc] init];
+    [actualAnswer setValue:-12 atI:0 J:0];
+    [actualAnswer setValue:-3  atI:0 J:1];
+    [actualAnswer setValue: 6  atI:0 J:2];
+    [actualAnswer setValue:-30 atI:1 J:0];
+    [actualAnswer setValue:-12 atI:1 J:1];
+    [actualAnswer setValue: 6  atI:1 J:2];
+    [actualAnswer setValue:-48 atI:2 J:0];
+    [actualAnswer setValue:-21 atI:2 J:1];
+    [actualAnswer setValue: 6  atI:2 J:2];
+    
+    SRMatrix *matrix3 = [matrix1 multiply:matrix2];
+    
+    for(int i=0; i<3; i++) {
+        for (int j=0; j<3; j++) {
+            XCTAssertEqual([actualAnswer valueAtI:i J:j], [matrix3 valueAtI:i J:j]);
+        }
+    }
 }
 
 @end

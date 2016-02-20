@@ -10,35 +10,6 @@
 
 //////////////////////////////////////////////////////////////////////////
 #pragma mark -
-#pragma mark C Methods
-//////////////////////////////////////////////////////////////////////////
-
-SRPoint SRPointMake(float x, float y, float z)  {
-    SRPoint point;
-    point.x = x;
-    point.y = y;
-    point.z = z;
-    return point;
-}
-
-SRColor SRColorMake(float r, float g, float b, float a) {
-    SRColor color;
-    color.r = r;
-    color.g = g;
-    color.b = b;
-    color.a = a;
-    return color;
-}
-
-SRVertex SRVertexMake(SRPoint point, SRColor color) {
-    SRVertex vertex;
-    vertex.point = point;
-    vertex.color = color;
-    return vertex;
-}
-
-//////////////////////////////////////////////////////////////////////////
-#pragma mark -
 #pragma mark SRVertices
 //////////////////////////////////////////////////////////////////////////
 
@@ -78,7 +49,7 @@ SRVertex SRVertexMake(SRPoint point, SRColor color) {
 - (void)load {    
     GLuint positionLocation = _program.positionAttribute.location;
     GLuint colorLocation = _program.colorAttribute.location;
-    glVertexAttribPointer(positionLocation, 3, GL_FLOAT, GL_FALSE, sizeof(SRVertex), 0);
+    glVertexAttribPointer(positionLocation, 2, GL_FLOAT, GL_FALSE, sizeof(SRVertex), 0);
     glVertexAttribPointer(colorLocation, 4, GL_FLOAT, GL_FALSE, sizeof(SRVertex), (void *)sizeof(SRPoint));
 }
 

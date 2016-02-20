@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4491CB071C57B05A007B63D2 /* Canon_RingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4491CB061C57B05A007B63D2 /* Canon_RingsTests.m */; };
+		445DC21B1C5ED28F0042C9F0 /* SRSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DC21A1C5ED28F0042C9F0 /* SRSprite.m */; };
 		4491CB131C57B21B007B63D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4491CB121C57B21B007B63D2 /* GLKit.framework */; };
 		44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */; };
 		44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4CA1C5C28ED009C8E32 /* SRContext.m */; };
@@ -26,6 +26,11 @@
 		44DCE4F91C5D08D3009C8E32 /* SRVertices.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4F81C5D08D3009C8E32 /* SRVertices.m */; };
 		44DCE4FC1C5D0F7E009C8E32 /* SRTriangles.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4FB1C5D0F7E009C8E32 /* SRTriangles.m */; };
 		44DCE4FF1C5D11BC009C8E32 /* SRVertexBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4FE1C5D11BC009C8E32 /* SRVertexBuffer.m */; };
+		44FC70541C78B4BF007867CD /* SRUniform.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70531C78B4BF007867CD /* SRUniform.m */; };
+		44FC70581C78B5D0007867CD /* SRMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70571C78B5D0007867CD /* SRMatrix.m */; };
+		44FC705C1C78B7A0007867CD /* Canon_RingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC705A1C78B7A0007867CD /* Canon_RingsTests.m */; };
+		44FC70671C78D2C1007867CD /* SRStructs.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70661C78D2C1007867CD /* SRStructs.m */; };
+		44FC70681C78D334007867CD /* SRStructs.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70661C78D2C1007867CD /* SRStructs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		445DC2191C5ED28F0042C9F0 /* SRSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSprite.h; sourceTree = SOURCE_ROOT; };
+		445DC21A1C5ED28F0042C9F0 /* SRSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSprite.m; sourceTree = SOURCE_ROOT; };
 		4491CAE91C57B05A007B63D2 /* Sling Rings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sling Rings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4491CB021C57B05A007B63D2 /* Sling Rings.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sling Rings.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4491CB061C57B05A007B63D2 /* Canon_RingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Canon_RingsTests.m; sourceTree = "<group>"; };
-		4491CB081C57B05A007B63D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4491CB121C57B21B007B63D2 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		44DCE4C61C5C28D9009C8E32 /* SROpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SROpenGLView.h; path = "Sling Rings/SROpenGLView.h"; sourceTree = SOURCE_ROOT; };
 		44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SROpenGLView.m; path = "Sling Rings/SROpenGLView.m"; sourceTree = SOURCE_ROOT; };
@@ -74,6 +79,14 @@
 		44DCE4FB1C5D0F7E009C8E32 /* SRTriangles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTriangles.m; sourceTree = SOURCE_ROOT; };
 		44DCE4FD1C5D11BC009C8E32 /* SRVertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRVertexBuffer.h; sourceTree = SOURCE_ROOT; };
 		44DCE4FE1C5D11BC009C8E32 /* SRVertexBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRVertexBuffer.m; sourceTree = SOURCE_ROOT; };
+		44FC70521C78B4BF007867CD /* SRUniform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRUniform.h; sourceTree = SOURCE_ROOT; };
+		44FC70531C78B4BF007867CD /* SRUniform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRUniform.m; sourceTree = SOURCE_ROOT; };
+		44FC70561C78B5D0007867CD /* SRMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMatrix.h; sourceTree = SOURCE_ROOT; };
+		44FC70571C78B5D0007867CD /* SRMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRMatrix.m; sourceTree = SOURCE_ROOT; };
+		44FC705A1C78B7A0007867CD /* Canon_RingsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Canon_RingsTests.m; path = "Sling RingsTests/Canon_RingsTests.m"; sourceTree = "<group>"; };
+		44FC705B1C78B7A0007867CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Sling RingsTests/Info.plist"; sourceTree = "<group>"; };
+		44FC70621C78D21F007867CD /* SRStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStructs.h; sourceTree = SOURCE_ROOT; };
+		44FC70661C78D2C1007867CD /* SRStructs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStructs.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +113,7 @@
 			children = (
 				4491CAEB1C57B05A007B63D2 /* Sling Rings */,
 				4491CB141C57B220007B63D2 /* Frameworks */,
-				4491CB051C57B05A007B63D2 /* Canon RingsTests */,
+				44FC70591C78B78D007867CD /* Sling Rings Tests */,
 				4491CAEA1C57B05A007B63D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,15 +151,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4491CB051C57B05A007B63D2 /* Canon RingsTests */ = {
-			isa = PBXGroup;
-			children = (
-				4491CB061C57B05A007B63D2 /* Canon_RingsTests.m */,
-				4491CB081C57B05A007B63D2 /* Info.plist */,
-			);
-			path = "Canon RingsTests";
-			sourceTree = "<group>";
-		};
 		4491CB141C57B220007B63D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,24 +182,29 @@
 		44EFDE451C5C246300C92DC0 /* OpenGL Objects */ = {
 			isa = PBXGroup;
 			children = (
+				44FC70551C78B5A0007867CD /* Properties */,
 				44DCE4C91C5C28ED009C8E32 /* SRContext.h */,
 				44DCE4CA1C5C28ED009C8E32 /* SRContext.m */,
 				44DCE4CB1C5C28ED009C8E32 /* SRFrameBuffer.h */,
 				44DCE4CC1C5C28ED009C8E32 /* SRFrameBuffer.m */,
+				44DCE4ED1C5C2C68009C8E32 /* SRProgram.h */,
+				44DCE4EE1C5C2C68009C8E32 /* SRProgram.m */,
 				44DCE4CD1C5C28ED009C8E32 /* SRRenderBuffer.h */,
 				44DCE4CE1C5C28ED009C8E32 /* SRRenderBuffer.m */,
 				44DCE4EA1C5C2B19009C8E32 /* SRShader.h */,
 				44DCE4EB1C5C2B19009C8E32 /* SRShader.m */,
-				44DCE4ED1C5C2C68009C8E32 /* SRProgram.h */,
-				44DCE4EE1C5C2C68009C8E32 /* SRProgram.m */,
-				44DCE4F31C5C3028009C8E32 /* SRAttribute.h */,
-				44DCE4F41C5C3028009C8E32 /* SRAttribute.m */,
-				44DCE4F71C5D08D3009C8E32 /* SRVertices.h */,
-				44DCE4F81C5D08D3009C8E32 /* SRVertices.m */,
+				445DC2191C5ED28F0042C9F0 /* SRSprite.h */,
+				445DC21A1C5ED28F0042C9F0 /* SRSprite.m */,
 				44DCE4FA1C5D0F7E009C8E32 /* SRTriangles.h */,
 				44DCE4FB1C5D0F7E009C8E32 /* SRTriangles.m */,
 				44DCE4FD1C5D11BC009C8E32 /* SRVertexBuffer.h */,
 				44DCE4FE1C5D11BC009C8E32 /* SRVertexBuffer.m */,
+				44DCE4F71C5D08D3009C8E32 /* SRVertices.h */,
+				44DCE4F81C5D08D3009C8E32 /* SRVertices.m */,
+				44FC70561C78B5D0007867CD /* SRMatrix.h */,
+				44FC70571C78B5D0007867CD /* SRMatrix.m */,
+				44FC70621C78D21F007867CD /* SRStructs.h */,
+				44FC70661C78D2C1007867CD /* SRStructs.m */,
 			);
 			name = "OpenGL Objects";
 			sourceTree = "<group>";
@@ -207,6 +216,26 @@
 				44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		44FC70551C78B5A0007867CD /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				44DCE4F31C5C3028009C8E32 /* SRAttribute.h */,
+				44DCE4F41C5C3028009C8E32 /* SRAttribute.m */,
+				44FC70521C78B4BF007867CD /* SRUniform.h */,
+				44FC70531C78B4BF007867CD /* SRUniform.m */,
+			);
+			name = Properties;
+			sourceTree = "<group>";
+		};
+		44FC70591C78B78D007867CD /* Sling Rings Tests */ = {
+			isa = PBXGroup;
+			children = (
+				44FC705A1C78B7A0007867CD /* Canon_RingsTests.m */,
+				44FC705B1C78B7A0007867CD /* Info.plist */,
+			);
+			name = "Sling Rings Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FC70681C78D334007867CD /* SRStructs.m in Sources */,
+				44DCE4EF1C5C2C68009C8E32 /* SRProgram.m in Sources */,
+				44FC70581C78B5D0007867CD /* SRMatrix.m in Sources */,
+				44DCE4F91C5D08D3009C8E32 /* SRVertices.m in Sources */,
 				44DCE4D01C5C28ED009C8E32 /* SRFrameBuffer.m in Sources */,
 				44DCE4F51C5C3028009C8E32 /* SRAttribute.m in Sources */,
 				44DCE4EC1C5C2B19009C8E32 /* SRShader.m in Sources */,
@@ -317,12 +350,12 @@
 				44DCE4D71C5C28FA009C8E32 /* SRViewController.m in Sources */,
 				44DCE4D61C5C28FA009C8E32 /* AppDelegate.m in Sources */,
 				44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */,
+				445DC21B1C5ED28F0042C9F0 /* SRSprite.m in Sources */,
 				44DCE4DD1C5C2915009C8E32 /* main.m in Sources */,
 				44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */,
 				44DCE4FF1C5D11BC009C8E32 /* SRVertexBuffer.m in Sources */,
-				44DCE4F91C5D08D3009C8E32 /* SRVertices.m in Sources */,
 				44DCE4FC1C5D0F7E009C8E32 /* SRTriangles.m in Sources */,
-				44DCE4EF1C5C2C68009C8E32 /* SRProgram.m in Sources */,
+				44FC70541C78B4BF007867CD /* SRUniform.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4491CB071C57B05A007B63D2 /* Canon_RingsTests.m in Sources */,
+				44FC705C1C78B7A0007867CD /* Canon_RingsTests.m in Sources */,
+				44FC70671C78D2C1007867CD /* SRStructs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
