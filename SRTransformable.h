@@ -17,5 +17,6 @@
 
 - (void)translateBy:(SRPoint)value;
 - (void)scaleBy:(SRPoint)value;
+- (void)zRotateBy:(GLfloat)value;
 
 @end

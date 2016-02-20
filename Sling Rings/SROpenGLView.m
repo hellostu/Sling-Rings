@@ -49,8 +49,8 @@
         _scene = [[SRScene alloc] init];
         [_scene generateNewSprite];
         
-        [_scene scaleBy:SRPointMake(2.0, 2.0, 1.0)];
-        [_scene translateBy:SRPointMake(-1.0, -1.0, 0.0)];
+        SRSprite *sprite2 = [_scene generateNewSprite];
+        [sprite2 scaleBy:SRPointMake(0.5, 0.5, 1.0)];
         
         self.contentScaleFactor = [UIScreen mainScreen].scale;
     }

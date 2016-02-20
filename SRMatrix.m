@@ -63,6 +63,18 @@
     return matrix;
 }
 
++ (SRMatrix *)zRotate:(GLfloat)value {
+    GLfloat sin = sinf(value);
+    GLfloat cos = cosf(value);
+    
+    SRMatrix *matrix = [SRMatrix identity];
+    [matrix setValue: cos atI:0 J:0];
+    [matrix setValue: sin atI:0 J:1];
+    [matrix setValue:-sin atI:1 J:0];
+    [matrix setValue: cos atI:1 J:1];
+    return matrix;
+}
+
 //////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Properties

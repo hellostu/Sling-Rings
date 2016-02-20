@@ -22,6 +22,7 @@
 + (SRMatrix *)identity;
 + (SRMatrix *)translationOf:(SRPoint)point;
 + (SRMatrix *)scaleOf:(SRPoint)point;
++ (SRMatrix *)zRotate:(GLfloat)value;
 
 - (SRMatrix *)multiply:(SRMatrix *)matrix;
 

@@ -24,10 +24,10 @@
     if (self) {
         SRVertices *vertices = [[SRVertices alloc] initWithSize:4 positionAttribute:positionAttribute colorAttribute:colorAttribute];
         SRTriangles *triangles = [[SRTriangles alloc] initWithSize:2];
-        [vertices setVertex:SRVertexMake(SRPointMake( 1, 0, 0), SRColorMake(1, 0, 0, 1)) atIndex:0];
+        [vertices setVertex:SRVertexMake(SRPointMake( 1, -1, 0), SRColorMake(1, 0, 0, 1)) atIndex:0];
         [vertices setVertex:SRVertexMake(SRPointMake( 1,  1, 0), SRColorMake(0, 1, 0, 1)) atIndex:1];
-        [vertices setVertex:SRVertexMake(SRPointMake(0,  1, 0), SRColorMake(0, 0, 1, 1)) atIndex:2];
-        [vertices setVertex:SRVertexMake(SRPointMake(0, 0, 0), SRColorMake(0, 0, 0, 1)) atIndex:3];
+        [vertices setVertex:SRVertexMake(SRPointMake(-1,  1, 0), SRColorMake(0, 0, 1, 1)) atIndex:2];
+        [vertices setVertex:SRVertexMake(SRPointMake(-1, -1, 0), SRColorMake(0, 0, 0, 1)) atIndex:3];
         [triangles setTriangle:SRTriangleMake(0, 1, 2) atIndex:0];
         [triangles setTriangle:SRTriangleMake(2, 3, 0) atIndex:1];
         

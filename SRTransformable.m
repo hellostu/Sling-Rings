@@ -36,4 +36,9 @@
     _transform = [_transform multiply:scale];
 }
 
+- (void)zRotateBy:(GLfloat)value {
+    SRMatrix *rotation = [SRMatrix zRotate:value];
+    _transform = [_transform multiply:rotation];
+}
+
 @end

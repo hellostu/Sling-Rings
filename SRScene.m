@@ -9,6 +9,7 @@
 @interface SRScene () {
     SRProgram *_program;
     
+    //Slots
     SRAttribute *_positionSlot;
     SRAttribute *_sourceColorSlot;
     SRUniform *_viewMatrixSlot;
@@ -29,10 +30,13 @@
 {
     self = [super init];
     if (self) {
+        //Create underlying program by compiling Vertex & Fragment shaders.
+        //This complexity will be hidden from all objects at a higher level.
         SRShader *vertexShader = [[SRShader alloc] initWithName:@"VertexShader" shaderType:SRShaderTypeVertex];
         SRShader *fragmentShader = [[SRShader alloc] initWithName:@"FragmentShader" shaderType:SRShaderTypeFragment];
         _program = [[SRProgram alloc] initWithShaders:@[vertexShader, fragmentShader]];
         
+        //Reference all of the "Slots". This is so we can bridge data over to GLSL world. 
         _positionSlot = [[SRAttribute alloc] initWithName:@"Position" program:_program];
         _sourceColorSlot = [[SRAttribute alloc] initWithName:@"SourceColor" program:_program];
         _viewMatrixSlot = [[SRUniform alloc] initWithName:@"View" program:_program];
