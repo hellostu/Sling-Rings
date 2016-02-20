@@ -28,7 +28,6 @@ SRTriangle SRTriangleMake(SRIndex a, SRIndex b, SRIndex c) {
 
 @interface SRTriangles () {
     SRTriangle *_triangles;
-    SRProgram *_program;
     int _size;
 }
 @end
@@ -40,12 +39,11 @@ SRTriangle SRTriangleMake(SRIndex a, SRIndex b, SRIndex c) {
 #pragma mark Lifecycle
 //////////////////////////////////////////////////////////////////////////
 
-- (id)initWithSize:(int)size program:(SRProgram *)program {
+- (id)initWithSize:(int)size {
     self = [super init];
     if (self) {
         _size = size;
         _triangles = calloc(size, sizeof(SRTriangle));
-        _program = program;
     }
     return self;
 }

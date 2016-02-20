@@ -31,6 +31,7 @@
 		44FC705C1C78B7A0007867CD /* Canon_RingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC705A1C78B7A0007867CD /* Canon_RingsTests.m */; };
 		44FC70671C78D2C1007867CD /* SRStructs.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70661C78D2C1007867CD /* SRStructs.m */; };
 		44FC70681C78D334007867CD /* SRStructs.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70661C78D2C1007867CD /* SRStructs.m */; };
+		44FC70711C78E824007867CD /* SRScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC706A1C78E486007867CD /* SRScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		44FC705B1C78B7A0007867CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Sling RingsTests/Info.plist"; sourceTree = "<group>"; };
 		44FC70621C78D21F007867CD /* SRStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRStructs.h; sourceTree = SOURCE_ROOT; };
 		44FC70661C78D2C1007867CD /* SRStructs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStructs.m; sourceTree = SOURCE_ROOT; };
+		44FC70691C78E486007867CD /* SRScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRScene.h; sourceTree = SOURCE_ROOT; };
+		44FC706A1C78E486007867CD /* SRScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRScene.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,29 +185,12 @@
 		44EFDE451C5C246300C92DC0 /* OpenGL Objects */ = {
 			isa = PBXGroup;
 			children = (
+				44FC70701C78E50E007867CD /* View */,
+				44FC706F1C78E4FA007867CD /* Program */,
+				44FC706E1C78E4E4007867CD /* Drawing */,
+				44FC706D1C78E4D2007867CD /* Math */,
+				44FC706C1C78E4BC007867CD /* Buffers */,
 				44FC70551C78B5A0007867CD /* Properties */,
-				44DCE4C91C5C28ED009C8E32 /* SRContext.h */,
-				44DCE4CA1C5C28ED009C8E32 /* SRContext.m */,
-				44DCE4CB1C5C28ED009C8E32 /* SRFrameBuffer.h */,
-				44DCE4CC1C5C28ED009C8E32 /* SRFrameBuffer.m */,
-				44DCE4ED1C5C2C68009C8E32 /* SRProgram.h */,
-				44DCE4EE1C5C2C68009C8E32 /* SRProgram.m */,
-				44DCE4CD1C5C28ED009C8E32 /* SRRenderBuffer.h */,
-				44DCE4CE1C5C28ED009C8E32 /* SRRenderBuffer.m */,
-				44DCE4EA1C5C2B19009C8E32 /* SRShader.h */,
-				44DCE4EB1C5C2B19009C8E32 /* SRShader.m */,
-				445DC2191C5ED28F0042C9F0 /* SRSprite.h */,
-				445DC21A1C5ED28F0042C9F0 /* SRSprite.m */,
-				44DCE4FA1C5D0F7E009C8E32 /* SRTriangles.h */,
-				44DCE4FB1C5D0F7E009C8E32 /* SRTriangles.m */,
-				44DCE4FD1C5D11BC009C8E32 /* SRVertexBuffer.h */,
-				44DCE4FE1C5D11BC009C8E32 /* SRVertexBuffer.m */,
-				44DCE4F71C5D08D3009C8E32 /* SRVertices.h */,
-				44DCE4F81C5D08D3009C8E32 /* SRVertices.m */,
-				44FC70561C78B5D0007867CD /* SRMatrix.h */,
-				44FC70571C78B5D0007867CD /* SRMatrix.m */,
-				44FC70621C78D21F007867CD /* SRStructs.h */,
-				44FC70661C78D2C1007867CD /* SRStructs.m */,
 			);
 			name = "OpenGL Objects";
 			sourceTree = "<group>";
@@ -236,6 +222,65 @@
 				44FC705B1C78B7A0007867CD /* Info.plist */,
 			);
 			name = "Sling Rings Tests";
+			sourceTree = "<group>";
+		};
+		44FC706C1C78E4BC007867CD /* Buffers */ = {
+			isa = PBXGroup;
+			children = (
+				44DCE4CD1C5C28ED009C8E32 /* SRRenderBuffer.h */,
+				44DCE4CE1C5C28ED009C8E32 /* SRRenderBuffer.m */,
+				44DCE4CB1C5C28ED009C8E32 /* SRFrameBuffer.h */,
+				44DCE4CC1C5C28ED009C8E32 /* SRFrameBuffer.m */,
+				44DCE4FD1C5D11BC009C8E32 /* SRVertexBuffer.h */,
+				44DCE4FE1C5D11BC009C8E32 /* SRVertexBuffer.m */,
+			);
+			name = Buffers;
+			sourceTree = "<group>";
+		};
+		44FC706D1C78E4D2007867CD /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				44FC70621C78D21F007867CD /* SRStructs.h */,
+				44FC70661C78D2C1007867CD /* SRStructs.m */,
+				44FC70561C78B5D0007867CD /* SRMatrix.h */,
+				44FC70571C78B5D0007867CD /* SRMatrix.m */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
+		44FC706E1C78E4E4007867CD /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				445DC2191C5ED28F0042C9F0 /* SRSprite.h */,
+				445DC21A1C5ED28F0042C9F0 /* SRSprite.m */,
+				44DCE4FA1C5D0F7E009C8E32 /* SRTriangles.h */,
+				44DCE4FB1C5D0F7E009C8E32 /* SRTriangles.m */,
+				44DCE4F71C5D08D3009C8E32 /* SRVertices.h */,
+				44DCE4F81C5D08D3009C8E32 /* SRVertices.m */,
+				44FC70691C78E486007867CD /* SRScene.h */,
+				44FC706A1C78E486007867CD /* SRScene.m */,
+			);
+			name = Drawing;
+			sourceTree = "<group>";
+		};
+		44FC706F1C78E4FA007867CD /* Program */ = {
+			isa = PBXGroup;
+			children = (
+				44DCE4ED1C5C2C68009C8E32 /* SRProgram.h */,
+				44DCE4EE1C5C2C68009C8E32 /* SRProgram.m */,
+				44DCE4EA1C5C2B19009C8E32 /* SRShader.h */,
+				44DCE4EB1C5C2B19009C8E32 /* SRShader.m */,
+			);
+			name = Program;
+			sourceTree = "<group>";
+		};
+		44FC70701C78E50E007867CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				44DCE4C91C5C28ED009C8E32 /* SRContext.h */,
+				44DCE4CA1C5C28ED009C8E32 /* SRContext.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +399,7 @@
 				44DCE4DD1C5C2915009C8E32 /* main.m in Sources */,
 				44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */,
 				44DCE4FF1C5D11BC009C8E32 /* SRVertexBuffer.m in Sources */,
+				44FC70711C78E824007867CD /* SRScene.m in Sources */,
 				44DCE4FC1C5D0F7E009C8E32 /* SRTriangles.m in Sources */,
 				44FC70541C78B4BF007867CD /* SRUniform.m in Sources */,
 			);

@@ -18,6 +18,7 @@
 #import "SRProgram.h"
 #import "SRVertexBuffer.h"
 #import "SRSprite.h"
+#import "SRScene.h"
 
 @interface SROpenGLView () {
     CAEAGLLayer* _eaglLayer;
@@ -25,8 +26,7 @@
     SRContext *_context;
     SRFrameBuffer *_frameBuffer;
     SRRenderBuffer *_renderBuffer;
-    SRProgram *_program;
-    SRSprite *_sprite;
+    SRScene *_scene;
 }
 @end
 
@@ -46,20 +46,12 @@
         _frameBuffer = [[SRFrameBuffer alloc] init];
         [_frameBuffer attachRenderBuffer:_renderBuffer];
         
-        SRShader *vertexShader = [[SRShader alloc] initWithName:@"VertexShader" shaderType:SRShaderTypeVertex];
-        SRShader *fragmentShader = [[SRShader alloc] initWithName:@"FragmentShader" shaderType:SRShaderTypeFragment];
-        
-        _program = [[SRProgram alloc] initWithShaders:@[vertexShader, fragmentShader]];
-        
-        _sprite = [[SRSprite alloc] initWithProgram:_program];
+        _scene = [[SRScene alloc] init];
+        [_scene generateNewSprite];
         
         SRMatrix *translation = [SRMatrix translationOf:SRPointMake(-1.0, -1.0, 0.0)];
         SRMatrix *scale = [SRMatrix scaleOf:SRPointMake(2.0, 2.0, 1.0)];
-        GLfloat *raw = translation.raw;
-        for (int i=0; i<16; i++) {
-            NSLog(@"%f", raw[i]);
-        }
-        [_program.viewUniform setValue:[scale multiply:translation]];
+        [_scene.viewMatrix setValue:[scale multiply:translation]];
         
         self.contentScaleFactor = [UIScreen mainScreen].scale;
     }
@@ -91,7 +83,7 @@
     float width = self.frame.size.width * self.contentScaleFactor;
     float height = self.frame.size.height * self.contentScaleFactor;
     glViewport(0.0, 0.0, width, height);
-    [_sprite draw];
+    [_scene draw];
     
     [_context display];
     

@@ -16,7 +16,8 @@
 @interface SRVertices () {
     SRVertex *_vertices;
     int _size;
-    SRProgram *_program;
+    SRAttribute *_positionAttribute;
+    SRAttribute *_colorAttribute;
 }
 @end
 
@@ -27,12 +28,13 @@
 #pragma mark Lifecycle
 //////////////////////////////////////////////////////////////////////////
 
-- (id)initWithSize:(int)size program:(SRProgram *)program {
+- (id)initWithSize:(int)size positionAttribute:(SRAttribute *)positionAttribute colorAttribute:(SRAttribute *)colorAttribute {
     self = [super init];
     if (self) {
         _size = size;
         _vertices =  calloc(size, sizeof(SRVertex));
-        _program = program;
+        _positionAttribute = positionAttribute;
+        _colorAttribute = colorAttribute;
     }
     return self;
 }
@@ -47,8 +49,8 @@
 //////////////////////////////////////////////////////////////////////////
 
 - (void)load {    
-    GLuint positionLocation = _program.positionAttribute.location;
-    GLuint colorLocation = _program.colorAttribute.location;
+    GLuint positionLocation = _positionAttribute.location;
+    GLuint colorLocation = _colorAttribute.location;
     glVertexAttribPointer(positionLocation, 2, GL_FLOAT, GL_FALSE, sizeof(SRVertex), 0);
     glVertexAttribPointer(colorLocation, 4, GL_FLOAT, GL_FALSE, sizeof(SRVertex), (void *)sizeof(SRPoint));
 }

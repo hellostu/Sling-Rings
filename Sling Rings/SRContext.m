@@ -11,7 +11,6 @@
 #include <OpenGLES/ES2/glext.h>
 
 @interface SRContext () {
-    //EAGLContext *_context;
     SRRenderBuffer *_renderBuffer;
 }
 @end

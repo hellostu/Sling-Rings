@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import "SRProgram.h"
 #import "SRStructs.h"
+#import "SRAttribute.h"
 @class SRProgram;
 
 @interface SRVertices : NSObject
@@ -19,7 +20,7 @@
 @property(readonly) void *raw;
 @property(readonly) size_t totalBytes;
 
-- (id)initWithSize:(int)size program:(SRProgram *)program;
+- (id)initWithSize:(int)size positionAttribute:(SRAttribute *)positionAttribute colorAttribute:(SRAttribute *)colorAttribute;
 - (void)setVertex:(SRVertex)vertex atIndex:(uint)index;
 - (SRVertex *)vertexAtIndex:(uint)index;
 - (void)load;

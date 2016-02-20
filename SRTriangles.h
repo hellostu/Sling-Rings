@@ -26,7 +26,7 @@ SRTriangle SRTriangleMake(SRIndex a, SRIndex b, SRIndex c);
 
 @interface SRTriangles : NSObject
 
-- (id)initWithSize:(int)size program:(SRProgram *)program;
+- (id)initWithSize:(int)size;
 
 @property(readonly) void *raw;
 @property(readonly) size_t totalBytes;

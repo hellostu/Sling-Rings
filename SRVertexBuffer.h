@@ -19,7 +19,7 @@
 @property(readonly, nonatomic) SRVertices *vertices;
 @property(readonly, nonatomic) SRTriangles *triangles;
 
-- (id)initWithNumberOfVertices:(int)vertexCount numberOfTriangles:(int)triangleCount program:(SRProgram *)program;
+- (id)initWithVertices:(SRVertices *)vertices triangles:(SRTriangles *)triangles;
 - (void)submit;
 - (void)draw;
 

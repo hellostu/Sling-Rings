@@ -23,11 +23,11 @@
 #pragma mark Lifecycle
 //////////////////////////////////////////////////////////////////////////
 
-- (id)initWithNumberOfVertices:(int)vertexCount numberOfTriangles:(int)triangleCount program:(SRProgram *)program {
+- (id)initWithVertices:(SRVertices *)vertices triangles:(SRTriangles *)triangles {
     self = [super init];
     if (self) {
-        _vertices = [[SRVertices alloc] initWithSize:vertexCount program:program];
-        _triangles = [[SRTriangles alloc] initWithSize:triangleCount program:program];
+        _vertices = vertices;
+        _triangles = triangles;
         
         glGenBuffers(1, &_vertexBuffer);
         glGenBuffers(1, &_indexBuffer);
