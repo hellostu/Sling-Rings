@@ -2,9 +2,6 @@
 //  SRIndices.m
 //  Sling Rings
 //
-//  Created by Stuart Lynch on 30/01/2016.
-//  Copyright © 2016 uea.ac.uk. All rights reserved.
-//
 
 #import "SRTriangles.h"
 

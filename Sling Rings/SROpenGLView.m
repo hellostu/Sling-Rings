@@ -49,9 +49,8 @@
         _scene = [[SRScene alloc] init];
         [_scene generateNewSprite];
         
-        SRMatrix *translation = [SRMatrix translationOf:SRPointMake(-1.0, -1.0, 0.0)];
-        SRMatrix *scale = [SRMatrix scaleOf:SRPointMake(2.0, 2.0, 1.0)];
-        [_scene.viewMatrix setValue:[scale multiply:translation]];
+        [_scene scaleBy:SRPointMake(2.0, 2.0, 1.0)];
+        [_scene translateBy:SRPointMake(-1.0, -1.0, 0.0)];
         
         self.contentScaleFactor = [UIScreen mainScreen].scale;
     }

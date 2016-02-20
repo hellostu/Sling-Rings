@@ -2,8 +2,8 @@
 //  SRIndices.h
 //  Sling Rings
 //
-//  Created by Stuart Lynch on 30/01/2016.
-//  Copyright © 2016 uea.ac.uk. All rights reserved.
+//  A list of triangles, that are used to represent an object. The
+//  index a list of Vertices. 
 //
 
 #ifndef SRTriangles_h

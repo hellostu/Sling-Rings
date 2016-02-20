@@ -2,9 +2,6 @@
 //  SRVertices.m
 //  Sling Rings
 //
-//  Created by Stuart Lynch on 30/01/2016.
-//  Copyright © 2016 uea.ac.uk. All rights reserved.
-//
 
 #import "SRVertices.h"
 
@@ -16,8 +13,8 @@
 @interface SRVertices () {
     SRVertex *_vertices;
     int _size;
-    SRAttribute *_positionAttribute;
-    SRAttribute *_colorAttribute;
+    __weak SRAttribute *_positionAttribute;
+    __weak SRAttribute *_colorAttribute;
 }
 @end
 

@@ -32,6 +32,7 @@
 		44FC70671C78D2C1007867CD /* SRStructs.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70661C78D2C1007867CD /* SRStructs.m */; };
 		44FC70681C78D334007867CD /* SRStructs.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70661C78D2C1007867CD /* SRStructs.m */; };
 		44FC70711C78E824007867CD /* SRScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC706A1C78E486007867CD /* SRScene.m */; };
+		44FC70751C78EF7C007867CD /* SRTransformable.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70731C78EDF6007867CD /* SRTransformable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		44FC70661C78D2C1007867CD /* SRStructs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRStructs.m; sourceTree = SOURCE_ROOT; };
 		44FC70691C78E486007867CD /* SRScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRScene.h; sourceTree = SOURCE_ROOT; };
 		44FC706A1C78E486007867CD /* SRScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRScene.m; sourceTree = SOURCE_ROOT; };
+		44FC70721C78EDF6007867CD /* SRTransformable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTransformable.h; sourceTree = SOURCE_ROOT; };
+		44FC70731C78EDF6007867CD /* SRTransformable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTransformable.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,14 +254,16 @@
 		44FC706E1C78E4E4007867CD /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				44FC70691C78E486007867CD /* SRScene.h */,
+				44FC706A1C78E486007867CD /* SRScene.m */,
 				445DC2191C5ED28F0042C9F0 /* SRSprite.h */,
 				445DC21A1C5ED28F0042C9F0 /* SRSprite.m */,
 				44DCE4FA1C5D0F7E009C8E32 /* SRTriangles.h */,
 				44DCE4FB1C5D0F7E009C8E32 /* SRTriangles.m */,
 				44DCE4F71C5D08D3009C8E32 /* SRVertices.h */,
 				44DCE4F81C5D08D3009C8E32 /* SRVertices.m */,
-				44FC70691C78E486007867CD /* SRScene.h */,
-				44FC706A1C78E486007867CD /* SRScene.m */,
+				44FC70721C78EDF6007867CD /* SRTransformable.h */,
+				44FC70731C78EDF6007867CD /* SRTransformable.m */,
 			);
 			name = Drawing;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 				44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */,
 				445DC21B1C5ED28F0042C9F0 /* SRSprite.m in Sources */,
 				44DCE4DD1C5C2915009C8E32 /* main.m in Sources */,
+				44FC70751C78EF7C007867CD /* SRTransformable.m in Sources */,
 				44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */,
 				44DCE4FF1C5D11BC009C8E32 /* SRVertexBuffer.m in Sources */,
 				44FC70711C78E824007867CD /* SRScene.m in Sources */,

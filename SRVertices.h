@@ -2,8 +2,7 @@
 //  SRVertices.h
 //  Sling Rings
 //
-//  Created by Stuart Lynch on 30/01/2016.
-//  Copyright © 2016 uea.ac.uk. All rights reserved.
+//  A list of all of the Vertices used to define an object. 
 //
 
 #ifndef SRVertices_h

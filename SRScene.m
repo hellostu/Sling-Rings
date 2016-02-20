@@ -2,17 +2,17 @@
 //  SRScene.m
 //  Sling Rings
 //
-//  Created by Stuart Lynch on 20/02/2016.
-//  Copyright © 2016 uea.ac.uk. All rights reserved.
-//
 
 #import "SRScene.h"
 #import "SRShader.h"
 
 @interface SRScene () {
-    SRShader *_fragmentShader;
-    SRShader *_vertexShader;
     SRProgram *_program;
+    
+    SRAttribute *_positionSlot;
+    SRAttribute *_sourceColorSlot;
+    SRUniform *_viewMatrixSlot;
+    SRUniform *_modelMatrixSlot;
     
     NSMutableArray *_sprites;
 }
@@ -29,13 +29,14 @@
 {
     self = [super init];
     if (self) {
-        _vertexShader = [[SRShader alloc] initWithName:@"VertexShader" shaderType:SRShaderTypeVertex];
-        _fragmentShader = [[SRShader alloc] initWithName:@"FragmentShader" shaderType:SRShaderTypeFragment];
-        _program = [[SRProgram alloc] initWithShaders:@[_vertexShader, _fragmentShader]];
+        SRShader *vertexShader = [[SRShader alloc] initWithName:@"VertexShader" shaderType:SRShaderTypeVertex];
+        SRShader *fragmentShader = [[SRShader alloc] initWithName:@"FragmentShader" shaderType:SRShaderTypeFragment];
+        _program = [[SRProgram alloc] initWithShaders:@[vertexShader, fragmentShader]];
         
-        _position = [[SRAttribute alloc] initWithName:@"Position" program:_program];
-        _sourceColor = [[SRAttribute alloc] initWithName:@"SourceColor" program:_program];
-        _viewMatrix = [[SRUniform alloc] initWithName:@"View" program:_program];
+        _positionSlot = [[SRAttribute alloc] initWithName:@"Position" program:_program];
+        _sourceColorSlot = [[SRAttribute alloc] initWithName:@"SourceColor" program:_program];
+        _viewMatrixSlot = [[SRUniform alloc] initWithName:@"View" program:_program];
+        _modelMatrixSlot = [[SRUniform alloc] initWithName:@"Model" program:_program];
         
         _sprites = [[NSMutableArray alloc] init];
     }
@@ -48,7 +49,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 - (SRSprite *)generateNewSprite {
-    SRSprite *sprite = [[SRSprite alloc] initWithProgram:_program];
+    SRSprite *sprite = [[SRSprite alloc] initWithPositionAttribute:_positionSlot colorAttribute:_sourceColorSlot modelMatrix:_modelMatrixSlot];
     [_sprites addObject:sprite];
     return sprite;
 }
@@ -58,6 +59,7 @@
 }
 
 - (void)draw {
+    [_viewMatrixSlot setValue:self.transform];
     for (SRSprite *sprite in _sprites) {
         [sprite draw];
     }

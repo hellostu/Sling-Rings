@@ -2,23 +2,20 @@
 //  SRScene.h
 //  Sling Rings
 //
-//  Created by Stuart Lynch on 20/02/2016.
-//  Copyright © 2016 uea.ac.uk. All rights reserved.
+//  This object hides all of the details about Programs & Shaders, and simply
+//  exposes a mechanism for creating and drawing sprites onto the screen.
 //
 
 #ifndef SRScene_h
 #define SRScene_h
 
 #import <Foundation/Foundation.h>
+#import "SRTransformable.h"
 #import "SRAttribute.h"
 #import "SRUniform.h"
 #import "SRSprite.h"
 
-@interface SRScene : NSObject
-
-@property(nonatomic, strong) SRAttribute *position;
-@property(nonatomic, strong) SRAttribute *sourceColor;
-@property(nonatomic, strong) SRUniform *viewMatrix;
+@interface SRScene : SRTransformable
 
 - (SRSprite *)generateNewSprite;
 - (void)removeSprite:(SRSprite *)sprite;
