@@ -65,9 +65,9 @@
 
 + (SRMatrix *)translationOf:(SRPoint)point {
     SRMatrix *matrix = [SRMatrix identity];
-    [matrix setValue:point.x atI:3 J:0];
-    [matrix setValue:point.y atI:3 J:1];
-    [matrix setValue:point.z atI:3 J:2];
+    [matrix setValue:point.x atI:0 J:3];
+    [matrix setValue:point.y atI:1 J:3];
+    [matrix setValue:point.z atI:2 J:3];
     return matrix;
 }
 
@@ -85,8 +85,8 @@
     
     SRMatrix *matrix = [SRMatrix identity];
     [matrix setValue: cos atI:0 J:0];
-    [matrix setValue: sin atI:0 J:1];
-    [matrix setValue:-sin atI:1 J:0];
+    [matrix setValue: sin atI:1 J:0];
+    [matrix setValue:-sin atI:0 J:1];
     [matrix setValue: cos atI:1 J:1];
     return matrix;
 }
@@ -99,23 +99,23 @@
                                          andFar: (GLfloat) far {
     SRMatrix *matrix = [SRMatrix identity];
     [matrix setValue:(2.0 * near) / (right - left)      atI:0 J:0];
-    [matrix setValue:0.0                                atI:0 J:1];
-    [matrix setValue:0.0                                atI:0 J:2];
-    [matrix setValue:0.0                                atI:0 J:3];
-    
     [matrix setValue:0.0                                atI:1 J:0];
-    [matrix setValue:(2.0 * near) / (top - bottom)      atI:1 J:1];
-    [matrix setValue:0.0                                atI:1 J:2];
-    [matrix setValue:0.0                                atI:1 J:3];
-    
-    [matrix setValue:(right + left)/(right - left)      atI:2 J:0];
-    [matrix setValue:(top + bottom)/(top - bottom)      atI:2 J:1];
-    [matrix setValue:-(far + near) / (far - near)       atI:2 J:2];
-    [matrix setValue:-1.0                               atI:2 J:3];
-    
+    [matrix setValue:0.0                                atI:2 J:0];
     [matrix setValue:0.0                                atI:3 J:0];
+    
+    [matrix setValue:0.0                                atI:0 J:1];
+    [matrix setValue:(2.0 * near) / (top - bottom)      atI:1 J:1];
+    [matrix setValue:0.0                                atI:2 J:1];
     [matrix setValue:0.0                                atI:3 J:1];
-    [matrix setValue:-(2.0 * far * near) / (far - near) atI:3 J:2];
+    
+    [matrix setValue:(right + left)/(right - left)      atI:0 J:2];
+    [matrix setValue:(top + bottom)/(top - bottom)      atI:1 J:2];
+    [matrix setValue:-(far + near) / (far - near)       atI:2 J:2];
+    [matrix setValue:-1.0                               atI:3 J:2];
+    
+    [matrix setValue:0.0                                atI:0 J:3];
+    [matrix setValue:0.0                                atI:1 J:3];
+    [matrix setValue:-(2.0 * far * near) / (far - near) atI:2 J:3];
     [matrix setValue:0.0                                atI:3 J:3];
     
     return matrix;
@@ -168,7 +168,7 @@
 }
 
 - (GLfloat)valueAtI:(int)i J:(int)j {
-    return _matrix[i * _width + j];
+    return _matrix[j * _width + i];
 }
 
 - (void)setValue:(GLfloat)value atI:(int)i J:(int)j {
@@ -188,7 +188,7 @@
                                        reason:@"j must be less than width"
                                      userInfo:nil];
     }
-    _matrix[i * _width + j] = value;
+    _matrix[j * _width + i] = value;
 }
 
 @end
