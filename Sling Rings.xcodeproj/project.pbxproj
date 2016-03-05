@@ -35,6 +35,7 @@
 		44FC70751C78EF7C007867CD /* SRTransformable.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70731C78EDF6007867CD /* SRTransformable.m */; };
 		44FC707B1C7908E5007867CD /* SRTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC70771C78FB0B007867CD /* SRTexture.m */; };
 		44FC707C1C7908F5007867CD /* Texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44FC70791C790213007867CD /* Texture.jpg */; };
+		44FC70801C790C29007867CD /* SRDefaultScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FC707E1C790BD6007867CD /* SRDefaultScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		44FC70761C78FB0B007867CD /* SRTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTexture.h; sourceTree = SOURCE_ROOT; };
 		44FC70771C78FB0B007867CD /* SRTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTexture.m; sourceTree = SOURCE_ROOT; };
 		44FC70791C790213007867CD /* Texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Texture.jpg; sourceTree = SOURCE_ROOT; };
+		44FC707D1C790BD6007867CD /* SRDefaultScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRDefaultScene.h; sourceTree = SOURCE_ROOT; };
+		44FC707E1C790BD6007867CD /* SRDefaultScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRDefaultScene.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 			children = (
 				44DCE4C61C5C28D9009C8E32 /* SROpenGLView.h */,
 				44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */,
+				44FC707D1C790BD6007867CD /* SRDefaultScene.h */,
+				44FC707E1C790BD6007867CD /* SRDefaultScene.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -402,6 +407,7 @@
 				44FC70681C78D334007867CD /* SRStructs.m in Sources */,
 				44DCE4EF1C5C2C68009C8E32 /* SRProgram.m in Sources */,
 				44FC70581C78B5D0007867CD /* SRMatrix.m in Sources */,
+				44FC70801C790C29007867CD /* SRDefaultScene.m in Sources */,
 				44DCE4F91C5D08D3009C8E32 /* SRVertices.m in Sources */,
 				44DCE4D01C5C28ED009C8E32 /* SRFrameBuffer.m in Sources */,
 				44DCE4F51C5C3028009C8E32 /* SRAttribute.m in Sources */,

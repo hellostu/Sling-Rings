@@ -18,7 +18,7 @@
 #import "SRProgram.h"
 #import "SRVertexBuffer.h"
 #import "SRSprite.h"
-#import "SRScene.h"
+#import "SRDefaultScene.h"
 
 @interface SROpenGLView () {
     CAEAGLLayer* _eaglLayer;
@@ -26,7 +26,7 @@
     SRContext *_context;
     SRFrameBuffer *_frameBuffer;
     SRRenderBuffer *_renderBuffer;
-    SRScene *_scene;
+    SRDefaultScene *_scene;
 }
 @end
 
@@ -48,14 +48,7 @@
         _frameBuffer = [[SRFrameBuffer alloc] init];
         [_frameBuffer attachRenderBuffer:_renderBuffer];
         
-        _scene = [[SRScene alloc] init];
-        SRTexture *texture = [SRTexture named:@"Texture.jpg"];;
-        SRSprite *sprite1 = [_scene generateNewSprite];
-        sprite1.texture = texture;
-        
-        SRSprite *sprite2 = [_scene generateNewSprite];
-        sprite2.texture = texture;
-        [sprite2 scaleBy:SRPointMake(0.5, 0.5, 1.0)];
+        _scene = [[SRDefaultScene alloc] init];
         
         self.contentScaleFactor = [UIScreen mainScreen].scale;
     }
@@ -71,6 +64,7 @@
     [_context setRenderBufferStorage:_renderBuffer withLayer:_eaglLayer];
     [_renderBuffer bind];
     [_frameBuffer bind];
+    _scene.size = self.frame.size;
     [self render];
 }
 

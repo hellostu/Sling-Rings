@@ -9,6 +9,7 @@
 #ifndef SRScene_h
 #define SRScene_h
 
+@import UIKit;
 #import <Foundation/Foundation.h>
 #import "SRTransformable.h"
 #import "SRAttribute.h"
@@ -17,6 +18,9 @@
 
 @interface SRScene : SRTransformable
 
+@property(readwrite, assign) CGSize size;
+
+- (SRPoint)screenPointFromWorldPoint:(SRPoint)point;
 - (SRSprite *)generateNewSprite;
 - (void)removeSprite:(SRSprite *)sprite;
 - (void)draw;

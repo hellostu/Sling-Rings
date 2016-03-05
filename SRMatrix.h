@@ -17,13 +17,26 @@
 
 @interface SRMatrix : NSObject
 
+@property(assign, readwrite) int width;
+@property(assign, readwrite) int height;
+
 @property(assign, readonly) GLfloat *raw;
+
+- (id)initWithWidth:(int)width height:(int)height;
 
 + (SRMatrix *)identity;
 + (SRMatrix *)translationOf:(SRPoint)point;
 + (SRMatrix *)scaleOf:(SRPoint)point;
 + (SRMatrix *)zRotate:(GLfloat)value;
++ (SRMatrix *)populateProjectionFromFrustumLeft: (GLfloat) left
+                                       andRight: (GLfloat) right
+                                      andBottom: (GLfloat) bottom
+                                         andTop: (GLfloat) top
+                                        andNear: (GLfloat) near
+                                         andFar: (GLfloat) far;
++ (SRMatrix *)vectorFromPoint:(SRPoint)point;
 
+- (SRMatrix *)transpose;
 - (SRMatrix *)multiply:(SRMatrix *)matrix;
 
 - (void)setValue:(GLfloat)value atI:(int)i J:(int)j;

@@ -16,7 +16,7 @@
 @implementation Sling_RingsTests
 
 - (void)testMatrixMultiplication {
-    SRMatrix *matrix1 = [[SRMatrix alloc] init];
+    SRMatrix *matrix1 = [[SRMatrix alloc] initWithWidth:3 height:3];
     [matrix1 setValue:2  atI:0 J:0];
     [matrix1 setValue:3  atI:0 J:1];
     [matrix1 setValue:4  atI:0 J:2];
@@ -27,7 +27,7 @@
     [matrix1 setValue:9  atI:2 J:1];
     [matrix1 setValue:10 atI:2 J:2];
     
-    SRMatrix *matrix2 = [[SRMatrix alloc] init];
+    SRMatrix *matrix2 = [[SRMatrix alloc] initWithWidth:3 height:3];
     [matrix2 setValue:-5  atI:0 J:0];
     [matrix2 setValue:-4  atI:0 J:1];
     [matrix2 setValue:-3  atI:0 J:2];
@@ -38,7 +38,7 @@
     [matrix2 setValue: 2  atI:2 J:1];
     [matrix2 setValue: 3  atI:2 J:2];
     
-    SRMatrix *actualAnswer = [[SRMatrix alloc] init];
+    SRMatrix *actualAnswer = [[SRMatrix alloc] initWithWidth:3 height:3];
     [actualAnswer setValue:-12 atI:0 J:0];
     [actualAnswer setValue:-3  atI:0 J:1];
     [actualAnswer setValue: 6  atI:0 J:2];
