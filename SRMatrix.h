@@ -22,7 +22,7 @@
 
 @property(assign, readonly) GLfloat *raw;
 
-- (id)initWithWidth:(int)width height:(int)height;
+- (id)initWithHeight:(int)height width:(int)width;
 
 + (SRMatrix *)identity;
 + (SRMatrix *)translationOf:(SRPoint)point;

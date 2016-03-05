@@ -23,10 +23,10 @@
 #pragma mark Lifecycle
 //////////////////////////////////////////////////////////////////////////
 
-- (id)initWithWidth:(int)width height:(int)height {
+- (id)initWithHeight:(int)height width:(int)width {
     self = [super init];
     if(self) {
-        _matrix = malloc(sizeof(GLfloat) * width * height);
+        _matrix = malloc(sizeof(GLfloat) * height * width);
         _width = width;
         _height = height;
         
@@ -34,9 +34,9 @@
         for (int i = 0; i < _height;  i++) {
             for (int j = 0; j < _width; j++) {
                 if(i==j) {
-                    _matrix[i*_height + j] = 1;
+                    [self setValue:1 atI:i J:j];
                 } else {
-                    _matrix[i*_height + j] = 0;
+                    [self setValue:0 atI:i J:j];
                 }
                 
             }
@@ -50,7 +50,7 @@
 }
 
 + (SRMatrix *)vectorFromPoint:(SRPoint)point {
-    SRMatrix *matrix = [[SRMatrix alloc] initWithWidth:1 height:4];
+    SRMatrix *matrix = [[SRMatrix alloc] initWithHeight:4 width:1];
     [matrix setValue:point.x atI:0 J:0];
     [matrix setValue:point.y atI:1 J:0];
     [matrix setValue:point.z atI:2 J:0];
@@ -60,7 +60,7 @@
 }
 
 + (SRMatrix *)identity {
-    return [[SRMatrix alloc] initWithWidth:4 height:4];
+    return [[SRMatrix alloc] initWithHeight:4 width:4];
 }
 
 + (SRMatrix *)translationOf:(SRPoint)point {
@@ -136,9 +136,9 @@
 //////////////////////////////////////////////////////////////////////////
 
 - (SRMatrix *)transpose {
-    SRMatrix *matrix = [[SRMatrix alloc] initWithWidth:_height height:_width];
-    for (int i=0; i<_width; i++) {
-        for (int j=0; j<_height; j++) {
+    SRMatrix *matrix = [[SRMatrix alloc] initWithHeight:_width width:_height];
+    for (int i=0; i<_height; i++) {
+        for (int j=0; j<_width; j++) {
             GLfloat value = [self valueAtI:i J:j];
             [matrix setValue:value atI:j J:i];
         }
@@ -147,16 +147,18 @@
 }
 
 - (SRMatrix *)multiply:(SRMatrix *)matrix {
-    if(matrix.height != self.width) {
-        @throw [NSException exceptionWithName:@"Inner Sizes in Matrices must match to multiply" reason:@"" userInfo:nil];
+    if(self.width != matrix.height) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:@"Inner Sizes in Matrices must match to multiply"
+                                     userInfo:nil];
     }
     
-    SRMatrix *newMatrix = [[SRMatrix alloc] initWithWidth:matrix.width height:self.height];
+    SRMatrix *newMatrix = [[SRMatrix alloc] initWithHeight:self.height width:matrix.width];
     
-    for (int a=0; a<_height; a++) {
-        for (int b=0; b<_width; b++) {
+    for (int a=0; a< self.height; a++) {
+        for (int b=0; b< matrix.width; b++) {
             GLfloat sum = 0;
-            for (int c=0; c<_width; c++) {
+            for (int c=0; c<self.width; c++) {
                 sum += [self valueAtI:a J:c] * [matrix valueAtI:c J:b];
             }
             [newMatrix setValue:sum atI:a J:b];
@@ -166,11 +168,27 @@
 }
 
 - (GLfloat)valueAtI:(int)i J:(int)j {
-    return _matrix[i * _height + j];
+    return _matrix[i * _width + j];
 }
 
 - (void)setValue:(GLfloat)value atI:(int)i J:(int)j {
-    _matrix[i * _height + j] = value;
+    if (i < 0 || j < 0) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:@"index must be more than zero"
+                                     userInfo:nil];
+    }
+    
+    if (i >= _height) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:@"i must be less than height"
+                                     userInfo:nil];
+    }
+    if (j >= _width) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:@"j must be less than width"
+                                     userInfo:nil];
+    }
+    _matrix[i * _width + j] = value;
 }
 
 @end

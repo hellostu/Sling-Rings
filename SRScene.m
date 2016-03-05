@@ -137,13 +137,13 @@
     
     printf("width: %.1f, height: %.1f\n", _size.width, _size.height);
     for(int i = 0; i<4; i++) {
-        SRMatrix *vec = [[SRMatrix alloc] initWithWidth:1 height:4];
-        [vec setValue:points[i*2] atI:0 J:0];
-        [vec setValue:points[i*2+1] atI:0 J:1];
-        [vec setValue:0 atI:0 J:2];
-        [vec setValue: 1 atI:0 J:3];
+        SRMatrix *vec = [[SRMatrix alloc] initWithHeight:4 width:1];
+        [vec setValue:points[i*2]   atI:0 J:0];
+        [vec setValue:points[i*2+1] atI:1 J:0];
+        [vec setValue:0             atI:2 J:0];
+        [vec setValue:1             atI:3 J:0];
         
-        SRMatrix *loc = [[vec transpose] multiply:sprite.transform];
+        SRMatrix *loc = [sprite.transform multiply:vec];
         SRPoint worldPoint = SRPointMake(loc.raw[0], loc.raw[1], 0.0);
         SRPoint screenPoint = [self screenPointFromWorldPoint:worldPoint];
         printf("%.1f, %.1f\n", screenPoint.x, screenPoint.y);
