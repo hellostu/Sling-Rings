@@ -143,7 +143,7 @@
         [vec setValue:0             atI:2 J:0];
         [vec setValue:1             atI:3 J:0];
         
-        SRMatrix *loc = [sprite.transform multiply:vec];
+        SRMatrix *loc = [[sprite.transform transpose] multiply:vec];
         SRPoint worldPoint = SRPointMake(loc.raw[0], loc.raw[1], 0.0);
         SRPoint screenPoint = [self screenPointFromWorldPoint:worldPoint];
         printf("%.1f, %.1f\n", screenPoint.x, screenPoint.y);

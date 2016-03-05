@@ -26,7 +26,7 @@
         SRSprite *sprite2 = [self generateNewSprite];
         sprite2.texture = texture;
         [sprite2 scaleBy:SRPointMake(0.5, 0.5, 1.0)];
-        [sprite2 translateBy:SRPointMake(0.1, 0.1, 0.0)];
+        [sprite2 translateBy:SRPointMake(0.5, 0.5, 0.0)];
     }
     return self;
 }
