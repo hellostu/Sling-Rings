@@ -8,11 +8,14 @@
 
 #import "SRDefaultScene.h"
 #import "SRBoundingBoxCollisionTest.h"
+#import "SRTimer.h"
 
-@interface SRDefaultScene () {
+@interface SRDefaultScene () <SRTimerDelegate> {
     SRSprite *_sprite;
     
     SRBoundingBoxCollisionTest *_boundingBoxCollision;
+    
+    SRTimer *_timer;
 }
 @end
 
@@ -34,8 +37,21 @@
         _sprite.texture = texture;
         _sprite.collisionDelegate = _boundingBoxCollision;
         [_sprite scaleBy:SRPointMake(0.5, 0.5, 1.0)];
+        
+        _timer = [[SRTimer alloc] init];
+        _timer.delegate = self;
+        [_timer start];
     }
     return self;
+}
+
+//////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark SRTimerDelegate
+//////////////////////////////////////////////////////////////////////////
+
+- (void)timer:(SRTimer *)timer changedWithSecondsSinceLastCall:(double)seconds {
+    [self draw];
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -51,8 +67,6 @@
         [_sprite translateBy:worldPoint];
         [_sprite scaleBy:SRPointMake(0.5, 0.5, 1.0)];
     }
-    
-    [self draw];
 }
 
 @end

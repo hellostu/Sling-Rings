@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4417D4DD1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4417D4DC1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m */; };
+		4417D4E01C8C5A67009C57CE /* SRTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4417D4DF1C8C5A67009C57CE /* SRTimer.m */; };
 		445DC21B1C5ED28F0042C9F0 /* SRSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DC21A1C5ED28F0042C9F0 /* SRSprite.m */; };
 		4491CB131C57B21B007B63D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4491CB121C57B21B007B63D2 /* GLKit.framework */; };
 		44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */; };
@@ -52,6 +53,8 @@
 /* Begin PBXFileReference section */
 		4417D4DB1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRBoundingBoxCollisionTest.h; sourceTree = SOURCE_ROOT; };
 		4417D4DC1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRBoundingBoxCollisionTest.m; sourceTree = SOURCE_ROOT; };
+		4417D4DE1C8C5A67009C57CE /* SRTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTimer.h; sourceTree = SOURCE_ROOT; };
+		4417D4DF1C8C5A67009C57CE /* SRTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTimer.m; sourceTree = SOURCE_ROOT; };
 		445DC2191C5ED28F0042C9F0 /* SRSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSprite.h; sourceTree = SOURCE_ROOT; };
 		445DC21A1C5ED28F0042C9F0 /* SRSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSprite.m; sourceTree = SOURCE_ROOT; };
 		4491CAE91C57B05A007B63D2 /* Sling Rings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sling Rings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +205,8 @@
 				44DCE4D31C5C28FA009C8E32 /* AppDelegate.m */,
 				44DCE4D41C5C28FA009C8E32 /* SRViewController.h */,
 				44DCE4D51C5C28FA009C8E32 /* SRViewController.m */,
+				4417D4DE1C8C5A67009C57CE /* SRTimer.h */,
+				4417D4DF1C8C5A67009C57CE /* SRTimer.m */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				44DCE4F51C5C3028009C8E32 /* SRAttribute.m in Sources */,
 				44DCE4EC1C5C2B19009C8E32 /* SRShader.m in Sources */,
 				44DCE4D11C5C28ED009C8E32 /* SRRenderBuffer.m in Sources */,
+				4417D4E01C8C5A67009C57CE /* SRTimer.m in Sources */,
 				44DCE4D71C5C28FA009C8E32 /* SRViewController.m in Sources */,
 				44DCE4D61C5C28FA009C8E32 /* AppDelegate.m in Sources */,
 				44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */,
