@@ -6,6 +6,14 @@
 //  Copyright © 2016 uea.ac.uk. All rights reserved.
 //
 
+struct SRRect {
+    float x;
+    float y;
+    float width;
+    float height;
+};
+typedef struct SRRect SRRect;
+
 struct SRPoint {
     float x;
     float y;
@@ -33,6 +41,7 @@ typedef struct {
     SRTexCoord texCoord;
 } SRVertex;
 
+SRRect      SRRectMake(float x, float y, float width, float height);
 SRPoint     SRPointMake(float x, float y, float z);
 SRColor     SRColorMake(float r, float g, float b, float a);
 SRTexCoord  SRTexCoordMake(float x, float y);

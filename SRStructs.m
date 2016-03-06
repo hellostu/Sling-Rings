@@ -8,6 +8,15 @@
 
 #import "SRStructs.h"
 
+SRRect SRRectMake(float x, float y, float width, float height) {
+    SRRect rect;
+    rect.x = x;
+    rect.y = y;
+    rect.width = width;
+    rect.height = height;
+    return rect;
+}
+
 SRPoint SRPointMake(float x, float y, float z)  {
     SRPoint point;
     point.x = x;

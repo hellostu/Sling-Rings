@@ -5,8 +5,16 @@
 
 #import "SRScene.h"
 #import "SRShader.h"
+#import "SRFrameBuffer.h"
+#import "SRContext.h"
+#import "SRRenderBuffer.h"
 
 @interface SRScene () {
+    
+    SRContext *_context;
+    SRFrameBuffer *_frameBuffer;
+    SRRenderBuffer *_renderBuffer;
+    
     SRProgram *_program;
     
     //Slots
@@ -38,6 +46,15 @@
 {
     self = [super init];
     if (self) {
+        _contentScaleFactor = 1;
+        
+        //Setup OpenGL context
+        _context = [[SRContext alloc] init];
+        //Create RenderBuffer for displaying to the screen
+        _renderBuffer = [[SRRenderBuffer alloc] init];
+        _frameBuffer = [[SRFrameBuffer alloc] init];
+        [_frameBuffer attachRenderBuffer:_renderBuffer];
+        
         //Create underlying program by compiling Vertex & Fragment shaders.
         //This complexity will be hidden from all objects at a higher level.
         SRShader *vertexShader = [[SRShader alloc] initWithName:@"VertexShader" shaderType:SRShaderTypeVertex];
@@ -65,6 +82,10 @@
 #pragma mark Public Methods
 //////////////////////////////////////////////////////////////////////////
 
+- (void)setRenderBufferLayer:(CAEAGLLayer *)layer {
+    [_context setRenderBufferStorage:_renderBuffer withLayer:layer];
+}
+
 //This maths will only work for 2D games, does not
 //translate to 3D.
 - (SRPoint)screenPointFromWorldPoint:(SRPoint)point {
@@ -80,6 +101,28 @@
     }
     
     y = -y + _size.height;
+    
+    return SRPointMake(x, y, 0);
+}
+
+//This maths will only work for 2D games, does not
+//translate to 3D.
+- (SRPoint)worldPointFromScreenPoint:(SRPoint)point {
+    CGFloat x = point.x;
+    CGFloat y = point.y;
+    
+    y = -y + _size.height;
+    
+    if(_size.width < _size.height) {
+        x = x / _size.width;
+        y = (y - (_size.height - _size.width)/2) / _size.width;
+    } else {
+        x = (x - (_size.width - _size.height)/2) / _size.height;
+        y = y / _size.height;
+    }
+    
+    x = x*2 - 1.0;
+    y = y*2 - 1.0;
     
     return SRPointMake(x, y, 0);
 }
@@ -116,7 +159,11 @@
 }
 
 - (SRSprite *)generateNewSprite {
-    SRSprite *sprite = [[SRSprite alloc] initWithPositionAttribute:_positionSlot colorAttribute:_sourceColorSlot textureAttribute:_textureSlot modelMatrix:_modelMatrixSlot];
+    SRSprite *sprite = [[SRSprite alloc] initWithScene:self
+                                     positionAttribute:_positionSlot
+                                        colorAttribute:_sourceColorSlot
+                                      textureAttribute:_textureSlot
+                                           modelMatrix:_modelMatrixSlot];
     [_sprites addObject:sprite];
     return sprite;
 }
@@ -126,10 +173,20 @@
 }
 
 - (void)draw {
+    glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+    float width = _size.width * self.contentScaleFactor;
+    float height = _size.height * self.contentScaleFactor;
+    glViewport(0.0, 0.0, width, height);
+    
+    [_renderBuffer bind];
+    [_frameBuffer bind];
     [_viewMatrixSlot setMatrix:self.transform];
     for (SRSprite *sprite in _sprites) {
         [sprite draw];
     }
+    [_context display];
 }
 
 - (void)printSpriteScreenLoc:(SRSprite *)sprite {
@@ -151,5 +208,24 @@
     
 }
 
+//////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Touches
+//////////////////////////////////////////////////////////////////////////
+
+- (void)touchBeganAtPoint:(SRPoint)point {
+    SRPoint world = [self worldPointFromScreenPoint:point];
+    printf("%.2f, %.2f\n", world.x, world.y);
+}
+
+- (void)touchMovedToPoint:(SRPoint)point {
+    SRPoint world = [self worldPointFromScreenPoint:point];
+    printf("%.2f, %.2f\n", world.x, world.y);
+}
+
+- (void)touchEndedAtPoint:(SRPoint)point {
+    SRPoint world = [self worldPointFromScreenPoint:point];
+    printf("%.2f, %.2f\n", world.x, world.y);
+}
 
 @end

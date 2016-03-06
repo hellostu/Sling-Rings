@@ -9,17 +9,23 @@
 @interface SRSprite () {
     SRVertexBuffer          *_vertexBuffer;
     __weak SRUniform        *_modelMatrixSlot;
+    __weak SRScene          *_scene;
 }
 @end
 
 @implementation SRSprite
+@dynamic boundingBox;
 
 //////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Lifecycle
 //////////////////////////////////////////////////////////////////////////
 
-- (id)initWithPositionAttribute:(SRAttribute *)positionAttribute colorAttribute:(SRAttribute *)colorAttribute textureAttribute:(SRAttribute *)textureAttribute modelMatrix:(SRUniform *)modelMatrix {
+- (id)initWithScene:(SRScene *)scene
+  positionAttribute:(SRAttribute *)positionAttribute
+     colorAttribute:(SRAttribute *)colorAttribute
+   textureAttribute:(SRAttribute *)textureAttribute
+        modelMatrix:(SRUniform *)modelMatrix {
     self = [super init];
     if (self) {
         SRVertices *vertices = [[SRVertices alloc] initWithSize:4 positionAttribute:positionAttribute colorAttribute:colorAttribute textureAttribute:textureAttribute];
@@ -39,12 +45,58 @@
     return self;
 }
 
+//////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Public Methods
+//////////////////////////////////////////////////////////////////////////
+
+- (SRRect)boundingBox {
+    
+    GLfloat minX =  100000000000;
+    GLfloat maxX = -100000000000;
+    GLfloat minY =  100000000000;
+    GLfloat maxY = -100000000000;
+    
+    for (int i=0; i<4; i++) {
+        SRPoint point = (*[_vertexBuffer.vertices vertexAtIndex:i]).point;
+        SRMatrix *vector = [SRMatrix vectorFromPoint:point];
+        SRMatrix *actual = [self.transform multiply:vector];
+        
+        if (actual.raw[0] < minX) {
+            minX = actual.raw[0];
+        } else if(actual.raw[0] > maxX) {
+            maxX = actual.raw[0];
+        }
+        
+        if (actual.raw[1] < minY) {
+            minY = actual.raw[1];
+        } else if(actual.raw[1] > maxY) {
+            maxY = actual.raw[1];
+        }
+    }
+    
+    GLfloat x = minX;
+    GLfloat y = minY;
+    GLfloat width = maxX - minX;
+    GLfloat height = maxY - minY;
+    
+    return SRRectMake(x, y, width, height);
+}
+
 - (void)draw {
     if (_texture != nil) {
         [_texture bind];
     }
     [_modelMatrixSlot setMatrix:self.transform];
     [_vertexBuffer draw];
+}
+
+- (BOOL)collidedWithPoint:(SRPoint)point {
+    if ([self.collisionDelegate respondsToSelector:@selector(sprite:collidedWithPoint:)]) {
+        return [self.collisionDelegate sprite:self collidedWithPoint:point];
+    } else {
+        return NO;
+    }
 }
 
 @end

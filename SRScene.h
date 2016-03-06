@@ -15,16 +15,28 @@
 #import "SRAttribute.h"
 #import "SRUniform.h"
 #import "SRSprite.h"
+@class SRSprite;
 
 @interface SRScene : SRTransformable
 
 @property(readwrite, assign) CGSize size;
+@property(readwrite, assign) GLfloat contentScaleFactor;
 
-- (SRPoint)screenPointFromWorldPoint:(SRPoint)point;
+- (void)setRenderBufferLayer:(CAEAGLLayer *)layer;
+
+// Spites & Drawing
 - (SRSprite *)generateNewSprite;
 - (void)removeSprite:(SRSprite *)sprite;
 - (void)draw;
 
+// Coordinate Space Transformations
+- (SRPoint)screenPointFromWorldPoint:(SRPoint)point;
+- (SRPoint)worldPointFromScreenPoint:(SRPoint)point;
+
+// Touch Handlers
+- (void)touchBeganAtPoint:(SRPoint)point;
+- (void)touchMovedToPoint:(SRPoint)point;
+- (void)touchEndedAtPoint:(SRPoint)point;
 @end
 
 #endif

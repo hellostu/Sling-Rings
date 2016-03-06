@@ -7,6 +7,14 @@
 //
 
 #import "SRDefaultScene.h"
+#import "SRBoundingBoxCollisionTest.h"
+
+@interface SRDefaultScene () {
+    SRSprite *_sprite;
+    
+    SRBoundingBoxCollisionTest *_boundingBoxCollision;
+}
+@end
 
 @implementation SRDefaultScene
 
@@ -19,16 +27,32 @@
 {
     self = [super init];
     if (self) {
-        SRTexture *texture = [SRTexture named:@"Texture.jpg"];;
-        SRSprite *sprite1 = [self generateNewSprite];
-        sprite1.texture = texture;
+        _boundingBoxCollision = [[SRBoundingBoxCollisionTest alloc] init];
         
-        SRSprite *sprite2 = [self generateNewSprite];
-        sprite2.texture = texture;
-        [sprite2 scaleBy:SRPointMake(0.5, 0.5, 1.0)];
-        [sprite2 translateBy:SRPointMake(0.5, 0.5, 0.0)];
+        SRTexture *texture = [SRTexture named:@"Texture.jpg"];;
+        _sprite = [self generateNewSprite];
+        _sprite.texture = texture;
+        _sprite.collisionDelegate = _boundingBoxCollision;
+        [_sprite scaleBy:SRPointMake(0.5, 0.5, 1.0)];
     }
     return self;
+}
+
+//////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Touches
+//////////////////////////////////////////////////////////////////////////
+
+- (void)touchMovedToPoint:(SRPoint)point {
+    SRPoint worldPoint = [self worldPointFromScreenPoint:point];
+    
+    if([_sprite collidedWithPoint:worldPoint]) {
+        _sprite.transform = [SRMatrix identity];
+        [_sprite translateBy:worldPoint];
+        [_sprite scaleBy:SRPointMake(0.5, 0.5, 1.0)];
+    }
+    
+    [self draw];
 }
 
 @end

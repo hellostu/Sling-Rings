@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4417D4DD1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4417D4DC1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m */; };
 		445DC21B1C5ED28F0042C9F0 /* SRSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DC21A1C5ED28F0042C9F0 /* SRSprite.m */; };
 		4491CB131C57B21B007B63D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4491CB121C57B21B007B63D2 /* GLKit.framework */; };
 		44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4417D4DB1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRBoundingBoxCollisionTest.h; sourceTree = SOURCE_ROOT; };
+		4417D4DC1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRBoundingBoxCollisionTest.m; sourceTree = SOURCE_ROOT; };
 		445DC2191C5ED28F0042C9F0 /* SRSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSprite.h; sourceTree = SOURCE_ROOT; };
 		445DC21A1C5ED28F0042C9F0 /* SRSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSprite.m; sourceTree = SOURCE_ROOT; };
 		4491CAE91C57B05A007B63D2 /* Sling Rings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sling Rings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4417D4DA1C8B6BB0009C57CE /* Collision */ = {
+			isa = PBXGroup;
+			children = (
+				4417D4DB1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.h */,
+				4417D4DC1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m */,
+			);
+			name = Collision;
+			sourceTree = "<group>";
+		};
 		4491CAE01C57B05A007B63D2 = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +158,7 @@
 			children = (
 				44DCE4E51C5C2A4B009C8E32 /* Application */,
 				44EFDE461C5C271200C92DC0 /* View */,
-				44EFDE451C5C246300C92DC0 /* OpenGL Objects */,
+				44EFDE451C5C246300C92DC0 /* Game Engine */,
 				44DCE4E41C5C2A43009C8E32 /* Resources */,
 				44DCE4D81C5C2903009C8E32 /* Assets.xcassets */,
 				44DCE4DA1C5C290B009C8E32 /* Info.plist */,
@@ -194,9 +206,10 @@
 			name = Application;
 			sourceTree = "<group>";
 		};
-		44EFDE451C5C246300C92DC0 /* OpenGL Objects */ = {
+		44EFDE451C5C246300C92DC0 /* Game Engine */ = {
 			isa = PBXGroup;
 			children = (
+				4417D4DA1C8B6BB0009C57CE /* Collision */,
 				44FC70701C78E50E007867CD /* View */,
 				44FC706F1C78E4FA007867CD /* Program */,
 				44FC706E1C78E4E4007867CD /* Drawing */,
@@ -204,7 +217,7 @@
 				44FC706C1C78E4BC007867CD /* Buffers */,
 				44FC70551C78B5A0007867CD /* Properties */,
 			);
-			name = "OpenGL Objects";
+			name = "Game Engine";
 			sourceTree = "<group>";
 		};
 		44EFDE461C5C271200C92DC0 /* View */ = {
@@ -416,6 +429,7 @@
 				44DCE4D71C5C28FA009C8E32 /* SRViewController.m in Sources */,
 				44DCE4D61C5C28FA009C8E32 /* AppDelegate.m in Sources */,
 				44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */,
+				4417D4DD1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m in Sources */,
 				445DC21B1C5ED28F0042C9F0 /* SRSprite.m in Sources */,
 				44DCE4DD1C5C2915009C8E32 /* main.m in Sources */,
 				44FC70751C78EF7C007867CD /* SRTransformable.m in Sources */,

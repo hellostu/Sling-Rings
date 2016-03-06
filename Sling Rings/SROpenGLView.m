@@ -22,10 +22,6 @@
 
 @interface SROpenGLView () {
     CAEAGLLayer* _eaglLayer;
-    
-    SRContext *_context;
-    SRFrameBuffer *_frameBuffer;
-    SRRenderBuffer *_renderBuffer;
     SRDefaultScene *_scene;
 }
 @end
@@ -41,14 +37,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self __setupLayer];
-        //Setup OpenGL context
-        _context = [[SRContext alloc] init];
-        //Create RenderBuffer for displaying to the screen
-        _renderBuffer = [[SRRenderBuffer alloc] init];
-        _frameBuffer = [[SRFrameBuffer alloc] init];
-        [_frameBuffer attachRenderBuffer:_renderBuffer];
         
         _scene = [[SRDefaultScene alloc] init];
+        _scene.contentScaleFactor = [UIScreen mainScreen].scale;
         
         self.contentScaleFactor = [UIScreen mainScreen].scale;
     }
@@ -61,9 +52,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [_context setRenderBufferStorage:_renderBuffer withLayer:_eaglLayer];
-    [_renderBuffer bind];
-    [_frameBuffer bind];
+    [_scene setRenderBufferLayer:_eaglLayer];
     _scene.size = self.frame.size;
     [self render];
 }
@@ -74,16 +63,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 - (void)render {
-    glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
-    glClear(GL_COLOR_BUFFER_BIT);
-    
-    float width = self.frame.size.width * self.contentScaleFactor;
-    float height = self.frame.size.height * self.contentScaleFactor;
-    glViewport(0.0, 0.0, width, height);
     [_scene draw];
-    
-    [_context display];
-    
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -94,6 +74,33 @@
 - (void)__setupLayer {
     _eaglLayer = (CAEAGLLayer*) self.layer;
     _eaglLayer.opaque = YES;
+}
+
+//////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Touches
+//////////////////////////////////////////////////////////////////////////
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    SRPoint point = [self pointFromTouches:touches];
+    [_scene touchBeganAtPoint:point];
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    SRPoint point = [self pointFromTouches:touches];
+    [_scene touchMovedToPoint:point];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    SRPoint point = [self pointFromTouches:touches];
+    [_scene touchEndedAtPoint:point];
+}
+
+- (SRPoint)pointFromTouches:(NSSet<UITouch *> *)touches {
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self];
+    
+    return SRPointMake(location.x, location.y, 0.0);
 }
 
 @end
