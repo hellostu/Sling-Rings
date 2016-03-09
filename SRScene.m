@@ -158,8 +158,12 @@
     return _size;
 }
 
-- (SRSprite *)generateNewSprite {
-    SRSprite *sprite = [[SRSprite alloc] initWithScene:self
+- (SRSprite *)generateNewSpriteWithClass:(Class)spriteClass {
+    if([spriteClass isSubclassOfClass:SRSprite.class] == false) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Class must be subclass of SRSprite" userInfo:nil];
+    }
+    
+    SRSprite *sprite = [[spriteClass alloc] initWithScene:self
                                      positionAttribute:_positionSlot
                                         colorAttribute:_sourceColorSlot
                                       textureAttribute:_textureSlot

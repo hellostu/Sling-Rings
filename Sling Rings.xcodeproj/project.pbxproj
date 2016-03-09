@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4417D4DD1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4417D4DC1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m */; };
 		4417D4E01C8C5A67009C57CE /* SRTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4417D4DF1C8C5A67009C57CE /* SRTimer.m */; };
+		4417D4E41C8CF451009C57CE /* SRCanonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4417D4E31C8CF451009C57CE /* SRCanonSprite.m */; };
 		445DC21B1C5ED28F0042C9F0 /* SRSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DC21A1C5ED28F0042C9F0 /* SRSprite.m */; };
 		4491CB131C57B21B007B63D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4491CB121C57B21B007B63D2 /* GLKit.framework */; };
 		44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */; };
@@ -55,6 +56,8 @@
 		4417D4DC1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRBoundingBoxCollisionTest.m; sourceTree = SOURCE_ROOT; };
 		4417D4DE1C8C5A67009C57CE /* SRTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTimer.h; sourceTree = SOURCE_ROOT; };
 		4417D4DF1C8C5A67009C57CE /* SRTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTimer.m; sourceTree = SOURCE_ROOT; };
+		4417D4E21C8CF451009C57CE /* SRCanonSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCanonSprite.h; sourceTree = SOURCE_ROOT; };
+		4417D4E31C8CF451009C57CE /* SRCanonSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCanonSprite.m; sourceTree = SOURCE_ROOT; };
 		445DC2191C5ED28F0042C9F0 /* SRSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRSprite.h; sourceTree = SOURCE_ROOT; };
 		445DC21A1C5ED28F0042C9F0 /* SRSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSprite.m; sourceTree = SOURCE_ROOT; };
 		4491CAE91C57B05A007B63D2 /* Sling Rings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sling Rings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +140,16 @@
 			name = Collision;
 			sourceTree = "<group>";
 		};
+		4417D4E11C8CF43C009C57CE /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				4417D4E21C8CF451009C57CE /* SRCanonSprite.h */,
+				4417D4E31C8CF451009C57CE /* SRCanonSprite.m */,
+				44FC706F1C78E4FA007867CD /* Program */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
+		};
 		4491CAE01C57B05A007B63D2 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +174,7 @@
 			children = (
 				44DCE4E51C5C2A4B009C8E32 /* Application */,
 				44EFDE461C5C271200C92DC0 /* View */,
+				4417D4E11C8CF43C009C57CE /* GameObjects */,
 				44EFDE451C5C246300C92DC0 /* Game Engine */,
 				44DCE4E41C5C2A43009C8E32 /* Resources */,
 				44DCE4D81C5C2903009C8E32 /* Assets.xcassets */,
@@ -216,7 +230,6 @@
 			children = (
 				4417D4DA1C8B6BB0009C57CE /* Collision */,
 				44FC70701C78E50E007867CD /* View */,
-				44FC706F1C78E4FA007867CD /* Program */,
 				44FC706E1C78E4E4007867CD /* Drawing */,
 				44FC706D1C78E4D2007867CD /* Math */,
 				44FC706C1C78E4BC007867CD /* Buffers */,
@@ -368,6 +381,7 @@
 				TargetAttributes = {
 					4491CAE81C57B05A007B63D2 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6SEBEKG39T;
 					};
 					4491CB011C57B05A007B63D2 = {
 						CreatedOnToolsVersion = 7.2;
@@ -442,6 +456,7 @@
 				44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */,
 				44DCE4FF1C5D11BC009C8E32 /* SRVertexBuffer.m in Sources */,
 				44FC70711C78E824007867CD /* SRScene.m in Sources */,
+				4417D4E41C8CF451009C57CE /* SRCanonSprite.m in Sources */,
 				44DCE4FC1C5D0F7E009C8E32 /* SRTriangles.m in Sources */,
 				44FC70541C78B4BF007867CD /* SRUniform.m in Sources */,
 			);
@@ -553,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sling Rings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.uea.Sling-Rings";
@@ -564,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Sling Rings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.uea.Sling-Rings";

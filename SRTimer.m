@@ -55,11 +55,12 @@
 
 - (void)update:(NSTimer *)timer {
     double currentTime = CACurrentMediaTime();
-    double diff = currentTime - _previousRecordedTime;
+    double diff =  currentTime - _previousRecordedTime;
     
     if ([self.delegate respondsToSelector:@selector(timer:changedWithSecondsSinceLastCall:)]) {
         [self.delegate timer:self changedWithSecondsSinceLastCall:diff];
     }
+    _previousRecordedTime = currentTime;
 }
 
 @end

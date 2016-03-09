@@ -15,6 +15,7 @@
 
 @implementation SRSprite
 @dynamic boundingBox;
+@dynamic backgroundColor;
 
 //////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -41,13 +42,14 @@
         [_vertexBuffer submit];
         
         _modelMatrixSlot = modelMatrix;
+        [self setupSprite];
     }
     return self;
 }
 
 //////////////////////////////////////////////////////////////////////////
 #pragma mark -
-#pragma mark Public Methods
+#pragma mark Public Properties
 //////////////////////////////////////////////////////////////////////////
 
 - (SRRect)boundingBox {
@@ -81,6 +83,26 @@
     GLfloat height = maxY - minY;
     
     return SRRectMake(x, y, width, height);
+}
+
+- (void)setBackgroundColor:(SRColor)backgroundColor {
+    for (int i = 0; i<4; i++) {
+        (*[_vertexBuffer.vertices vertexAtIndex:i]).color = backgroundColor;
+    }
+    [_vertexBuffer submit];
+}
+
+- (SRColor)backgroundColor {
+    return (*[_vertexBuffer.vertices vertexAtIndex:0]).color;
+}
+
+//////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Public Methods
+//////////////////////////////////////////////////////////////////////////
+
+- (void)setupSprite {
+    
 }
 
 - (void)draw {

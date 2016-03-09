@@ -8,10 +8,11 @@
 
 #import "SRDefaultScene.h"
 #import "SRBoundingBoxCollisionTest.h"
+#import "SRCanonSprite.h"
 #import "SRTimer.h"
 
 @interface SRDefaultScene () <SRTimerDelegate> {
-    SRSprite *_sprite;
+    SRCanonSprite *_sprite;
     
     SRBoundingBoxCollisionTest *_boundingBoxCollision;
     
@@ -32,12 +33,8 @@
     if (self) {
         _boundingBoxCollision = [[SRBoundingBoxCollisionTest alloc] init];
         
-        SRTexture *texture = [SRTexture named:@"Texture.jpg"];;
-        _sprite = [self generateNewSprite];
-        _sprite.texture = texture;
+        _sprite = (SRCanonSprite *)[self generateNewSpriteWithClass:SRCanonSprite.class];
         _sprite.collisionDelegate = _boundingBoxCollision;
-        [_sprite scaleBy:SRPointMake(0.5, 0.5, 1.0)];
-        
         _timer = [[SRTimer alloc] init];
         _timer.delegate = self;
         [_timer start];
@@ -50,7 +47,15 @@
 #pragma mark SRTimerDelegate
 //////////////////////////////////////////////////////////////////////////
 
+double angle = 0;
+
 - (void)timer:(SRTimer *)timer changedWithSecondsSinceLastCall:(double)seconds {
+    _sprite.angle += seconds;
+    SRRect frame = _sprite.frame;
+    frame.y = sinf(_sprite.angle);
+    frame.x = cosf(_sprite.angle)/2;
+    _sprite.frame = frame;
+    
     [self draw];
 }
 
@@ -63,9 +68,10 @@
     SRPoint worldPoint = [self worldPointFromScreenPoint:point];
     
     if([_sprite collidedWithPoint:worldPoint]) {
-        _sprite.transform = [SRMatrix identity];
-        [_sprite translateBy:worldPoint];
-        [_sprite scaleBy:SRPointMake(0.5, 0.5, 1.0)];
+        SRRect frame = _sprite.frame;
+        frame.x = worldPoint.x;
+        frame.y = worldPoint.y;
+        _sprite.frame = frame;
     }
 }
 

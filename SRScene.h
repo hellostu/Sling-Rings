@@ -25,7 +25,7 @@
 - (void)setRenderBufferLayer:(CAEAGLLayer *)layer;
 
 // Spites & Drawing
-- (SRSprite *)generateNewSprite;
+- (SRSprite *)generateNewSpriteWithClass:(Class)spriteClass;
 - (void)removeSprite:(SRSprite *)sprite;
 - (void)draw;
 

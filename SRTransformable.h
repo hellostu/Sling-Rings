@@ -13,10 +13,11 @@
 
 @interface SRTransformable : NSObject
 
-@property(nonatomic, strong) SRMatrix *transform;
+@property(nonatomic, readonly) SRMatrix *transform;
 
-- (void)translateBy:(SRPoint)value;
-- (void)scaleBy:(SRPoint)value;
-- (void)zRotateBy:(GLfloat)value;
+@property(nonatomic, readwrite) SRRect frame;
+@property(nonatomic, readwrite) SRPoint offset;
+@property(nonatomic, readwrite) float scale;
+@property(nonatomic, readwrite) float angle;
 
 @end

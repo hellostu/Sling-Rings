@@ -28,6 +28,7 @@
 @interface SRSprite : SRTransformable
 
 @property(nonatomic, readonly) SRRect boundingBox;
+@property(nonatomic, readwrite) SRColor backgroundColor;
 @property(nonatomic, strong) SRTexture *texture;
 @property(weak, nonatomic) id<SRSpriteCollisionDelegate> collisionDelegate;
 
@@ -37,6 +38,7 @@
    textureAttribute:(SRAttribute *)textureAttribute
         modelMatrix:(SRUniform *)modelMatrix;
 
+- (void)setupSprite;
 - (void)draw;
 
 - (BOOL)collidedWithPoint:(SRPoint)point;

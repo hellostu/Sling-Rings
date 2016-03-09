@@ -29,6 +29,9 @@
     // Create an OpenGL ES context and assign it to the view loaded
     openGLView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:openGLView];
+    
+    //Apply layout constraints so that the OpenGL view size always
+    //matches the size of it's parent
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:openGLView
                                                           attribute:NSLayoutAttributeLeft
                                                           relatedBy:NSLayoutRelationEqual
