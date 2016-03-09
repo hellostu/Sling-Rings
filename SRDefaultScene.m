@@ -27,9 +27,9 @@
 #pragma mark Lifecycle
 //////////////////////////////////////////////////////////////////////////
 
-- (instancetype)init
+- (instancetype)initWithParentView:(UIView *)view
 {
-    self = [super init];
+    self = [super initWithParentView:view];
     if (self) {
         _boundingBoxCollision = [[SRBoundingBoxCollisionTest alloc] init];
         
@@ -50,13 +50,7 @@
 double angle = 0;
 
 - (void)timer:(SRTimer *)timer changedWithSecondsSinceLastCall:(double)seconds {
-    _sprite.angle += seconds;
-    SRRect frame = _sprite.frame;
-    frame.y = sinf(_sprite.angle);
-    frame.x = cosf(_sprite.angle)/2;
-    _sprite.frame = frame;
     
-    [self draw];
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -64,15 +58,9 @@ double angle = 0;
 #pragma mark Touches
 //////////////////////////////////////////////////////////////////////////
 
-- (void)touchMovedToPoint:(SRPoint)point {
-    SRPoint worldPoint = [self worldPointFromScreenPoint:point];
-    
-    if([_sprite collidedWithPoint:worldPoint]) {
-        SRRect frame = _sprite.frame;
-        frame.x = worldPoint.x;
-        frame.y = worldPoint.y;
-        _sprite.frame = frame;
-    }
+- (void)touchMovedAtWorldPoint:(SRPoint)point {
+    _sprite.worldPointClick = point;
+    [self draw];
 }
 
 @end

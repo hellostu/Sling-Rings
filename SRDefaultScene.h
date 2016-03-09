@@ -6,8 +6,10 @@
 //  Copyright © 2016 uea.ac.uk. All rights reserved.
 //
 
-#import "SRScene.h"
+#import "SRInteractiveScene.h"
 
-@interface SRDefaultScene : SRScene
+@interface SRDefaultScene : SRInteractiveScene
+
+- (instancetype)initWithParentView:(UIView *)view;
 
 @end

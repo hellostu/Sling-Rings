@@ -10,4 +10,6 @@
 
 @interface SRCanonSprite : SRSprite
 
+@property(nonatomic, readwrite) SRPoint worldPointClick;
+
 @end

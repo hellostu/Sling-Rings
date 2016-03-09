@@ -24,4 +24,21 @@
     self.backgroundColor = SRColorMake(1.0, 1.0, 1.0, 1.0);
 }
 
+- (void)setWorldPointClick:(SRPoint)worldPointClick {
+    _worldPointClick = worldPointClick;
+    if (worldPointClick.x < self.frame.x) {
+        self.angle = 1.5708;
+        return;
+    }
+    if (worldPointClick.y < self.frame.y) {
+        self.angle = 0;
+        return;
+    }
+    
+    float x = worldPointClick.x - self.frame.x;
+    float y = worldPointClick.y - self.frame.y;
+    
+    self.angle =  atan2f(y, x);
+}
+
 @end

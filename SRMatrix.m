@@ -9,6 +9,7 @@
 #import "SRMatrix.h"
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
+#include <Accelerate/Accelerate.h>
 
 @interface SRMatrix () {
     GLfloat *_matrix;
@@ -41,6 +42,7 @@
                 
             }
         }
+        
     }
     return self;
 }
@@ -167,6 +169,29 @@
     return newMatrix;
 }
 
+- (SRMatrix *)inverse {
+    if (_width != _height) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:@"Can only invert square matrix"
+                                     userInfo:nil];
+    }
+    
+    int total = _width * _height;
+    
+    double *matrix = malloc(sizeof(double) * total);
+    for (int i = 0; i < total; i++) {
+        matrix[i] = (double)_matrix[i];
+    }
+    [self matrix_invert:_width andWithMatrix:matrix];
+    
+    SRMatrix *newMatrix = [[SRMatrix alloc] initWithHeight:_height width:_width];
+    for (int i = 0; i < total; i++) {
+        newMatrix.raw[i] = (GLfloat)matrix[i];
+    }
+    free(matrix);
+    return newMatrix;
+}
+
 - (GLfloat)valueAtI:(int)i J:(int)j {
     return _matrix[j * _width + i];
 }
@@ -189,6 +214,36 @@
                                      userInfo:nil];
     }
     _matrix[j * _width + i] = value;
+}
+
+//////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Private Methods
+//////////////////////////////////////////////////////////////////////////
+
+-(int) matrix_invert:(int) N andWithMatrix:(double*)matrix
+{
+    int error=0;
+    int *pivot = malloc(N*N*sizeof(int));
+    double *workspace = malloc(N*sizeof(double));
+    
+    dgetrf_(&N, &N, matrix, &N, pivot, &error);
+    
+    if (error != 0) {
+        NSLog(@"Error 1");
+        return error;
+    }
+    
+    dgetri_(&N, matrix, &N, pivot, workspace, &N, &error);
+    
+    if (error != 0) {
+        NSLog(@"Error 2");
+        return error;
+    }
+    
+    free(pivot);
+    free(workspace);
+    return error;
 }
 
 @end

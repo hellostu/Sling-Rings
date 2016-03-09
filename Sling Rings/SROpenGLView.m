@@ -38,7 +38,7 @@
     if (self) {
         [self __setupLayer];
         
-        _scene = [[SRDefaultScene alloc] init];
+        _scene = [[SRDefaultScene alloc] initWithParentView:self];
         _scene.contentScaleFactor = [UIScreen mainScreen].scale;
         
         self.contentScaleFactor = [UIScreen mainScreen].scale;
@@ -74,26 +74,6 @@
 - (void)__setupLayer {
     _eaglLayer = (CAEAGLLayer*) self.layer;
     _eaglLayer.opaque = YES;
-}
-
-//////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Touches
-//////////////////////////////////////////////////////////////////////////
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    SRPoint point = [self pointFromTouches:touches];
-    [_scene touchBeganAtPoint:point];
-}
-
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    SRPoint point = [self pointFromTouches:touches];
-    [_scene touchMovedToPoint:point];
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    SRPoint point = [self pointFromTouches:touches];
-    [_scene touchEndedAtPoint:point];
 }
 
 - (SRPoint)pointFromTouches:(NSSet<UITouch *> *)touches {

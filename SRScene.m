@@ -108,8 +108,8 @@
 //This maths will only work for 2D games, does not
 //translate to 3D.
 - (SRPoint)worldPointFromScreenPoint:(SRPoint)point {
-    CGFloat x = point.x;
-    CGFloat y = point.y;
+    float x = point.x;
+    float y = point.y;
     
     y = -y + _size.height;
     

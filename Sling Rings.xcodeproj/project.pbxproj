@@ -12,6 +12,9 @@
 		4417D4E41C8CF451009C57CE /* SRCanonSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4417D4E31C8CF451009C57CE /* SRCanonSprite.m */; };
 		445DC21B1C5ED28F0042C9F0 /* SRSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DC21A1C5ED28F0042C9F0 /* SRSprite.m */; };
 		4491CB131C57B21B007B63D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4491CB121C57B21B007B63D2 /* GLKit.framework */; };
+		44C375401C90A3A1002A5C66 /* SRCanonBallSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C3753F1C90A3A1002A5C66 /* SRCanonBallSprite.m */; };
+		44C375431C90A4E3002A5C66 /* SRInteractiveScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C375421C90A4E3002A5C66 /* SRInteractiveScene.m */; };
+		44C375451C90B0BB002A5C66 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C375441C90B0BB002A5C66 /* Accelerate.framework */; };
 		44DCE4C81C5C28D9009C8E32 /* SROpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */; };
 		44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4CA1C5C28ED009C8E32 /* SRContext.m */; };
 		44DCE4D01C5C28ED009C8E32 /* SRFrameBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 44DCE4CC1C5C28ED009C8E32 /* SRFrameBuffer.m */; };
@@ -63,6 +66,11 @@
 		4491CAE91C57B05A007B63D2 /* Sling Rings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sling Rings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4491CB021C57B05A007B63D2 /* Sling Rings.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sling Rings.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4491CB121C57B21B007B63D2 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		44C3753E1C90A3A1002A5C66 /* SRCanonBallSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRCanonBallSprite.h; sourceTree = SOURCE_ROOT; };
+		44C3753F1C90A3A1002A5C66 /* SRCanonBallSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRCanonBallSprite.m; sourceTree = SOURCE_ROOT; };
+		44C375411C90A4E3002A5C66 /* SRInteractiveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRInteractiveScene.h; sourceTree = SOURCE_ROOT; };
+		44C375421C90A4E3002A5C66 /* SRInteractiveScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRInteractiveScene.m; sourceTree = SOURCE_ROOT; };
+		44C375441C90B0BB002A5C66 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		44DCE4C61C5C28D9009C8E32 /* SROpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SROpenGLView.h; path = "Sling Rings/SROpenGLView.h"; sourceTree = SOURCE_ROOT; };
 		44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SROpenGLView.m; path = "Sling Rings/SROpenGLView.m"; sourceTree = SOURCE_ROOT; };
 		44DCE4C91C5C28ED009C8E32 /* SRContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRContext.h; path = "Sling Rings/SRContext.h"; sourceTree = SOURCE_ROOT; };
@@ -117,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C375451C90B0BB002A5C66 /* Accelerate.framework in Frameworks */,
 				4491CB131C57B21B007B63D2 /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +154,8 @@
 			children = (
 				4417D4E21C8CF451009C57CE /* SRCanonSprite.h */,
 				4417D4E31C8CF451009C57CE /* SRCanonSprite.m */,
+				44C3753E1C90A3A1002A5C66 /* SRCanonBallSprite.h */,
+				44C3753F1C90A3A1002A5C66 /* SRCanonBallSprite.m */,
 				44FC706F1C78E4FA007867CD /* Program */,
 			);
 			name = GameObjects;
@@ -197,6 +208,7 @@
 		4491CB141C57B220007B63D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44C375441C90B0BB002A5C66 /* Accelerate.framework */,
 				4491CB121C57B21B007B63D2 /* GLKit.framework */,
 			);
 			name = Frameworks;
@@ -245,6 +257,8 @@
 				44DCE4C71C5C28D9009C8E32 /* SROpenGLView.m */,
 				44FC707D1C790BD6007867CD /* SRDefaultScene.h */,
 				44FC707E1C790BD6007867CD /* SRDefaultScene.m */,
+				44C375411C90A4E3002A5C66 /* SRInteractiveScene.h */,
+				44C375421C90A4E3002A5C66 /* SRInteractiveScene.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -450,6 +464,8 @@
 				44DCE4D61C5C28FA009C8E32 /* AppDelegate.m in Sources */,
 				44DCE4CF1C5C28ED009C8E32 /* SRContext.m in Sources */,
 				4417D4DD1C8B6D15009C57CE /* SRBoundingBoxCollisionTest.m in Sources */,
+				44C375401C90A3A1002A5C66 /* SRCanonBallSprite.m in Sources */,
+				44C375431C90A4E3002A5C66 /* SRInteractiveScene.m in Sources */,
 				445DC21B1C5ED28F0042C9F0 /* SRSprite.m in Sources */,
 				44DCE4DD1C5C2915009C8E32 /* main.m in Sources */,
 				44FC70751C78EF7C007867CD /* SRTransformable.m in Sources */,

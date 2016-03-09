@@ -25,6 +25,7 @@
 - (id)initWithHeight:(int)height width:(int)width;
 
 + (SRMatrix *)identity;
+- (SRMatrix *)inverse;
 + (SRMatrix *)translationOf:(SRPoint)point;
 + (SRMatrix *)scaleOf:(SRPoint)point;
 + (SRMatrix *)zRotate:(GLfloat)value;

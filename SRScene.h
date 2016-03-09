@@ -33,10 +33,6 @@
 - (SRPoint)screenPointFromWorldPoint:(SRPoint)point;
 - (SRPoint)worldPointFromScreenPoint:(SRPoint)point;
 
-// Touch Handlers
-- (void)touchBeganAtPoint:(SRPoint)point;
-- (void)touchMovedToPoint:(SRPoint)point;
-- (void)touchEndedAtPoint:(SRPoint)point;
 @end
 
 #endif
